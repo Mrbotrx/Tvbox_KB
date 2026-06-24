@@ -5,18 +5,16 @@ workflow_dispatch:
 schedule:
 - cron: "*/30 * * * *"
 
+permissions:
+contents: write
+
 jobs:
-build:
+update:
 runs-on: ubuntu-latest
 
-permissions:
-  contents: write
-
 steps:
-  - name: Checkout
+  - name: Checkout Repository
     uses: actions/checkout@v4
-    with:
-      persist-credentials: true
 
   - name: Setup Python
     uses: actions/setup-python@v5
@@ -28,20 +26,27 @@ steps:
       python -m pip install --upgrade pip
       pip install requests
 
-  - name: Verify Secret
+  - name: Check SOURCE_URL Secret
     env:
       SOURCE_URL: ${{ secrets.SOURCE_URL }}
     run: |
       if [ -z "$SOURCE_URL" ]; then
-        echo "ERROR: SOURCE_URL secret is missing"
+        echo "SOURCE_URL secret is missing!"
         exit 1
       fi
 
-  - name: Run Filter
+  - name: Run Filter Script
     env:
       SOURCE_URL: ${{ secrets.SOURCE_URL }}
     run: |
       python filter.py
+
+  - name: Verify Output
+    run: |
+      if [ ! -f kb_tv.m3u ]; then
+        echo "kb_tv.m3u not generated!"
+        exit 1
+      fi
 
   - name: Commit Changes
     run: |
@@ -53,8 +58,8 @@ steps:
       git add kb_tv.m3u
 
       if git diff --cached --quiet; then
-        echo "No changes detected"
+        echo "No changes to commit"
       else
         git commit -m "Auto Update | ${TOTAL} Channels"
-        git push
+        git push origin HEAD
       fi
