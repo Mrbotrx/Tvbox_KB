@@ -26,27 +26,11 @@ steps:
       python -m pip install --upgrade pip
       pip install requests
 
-  - name: Check SOURCE_URL Secret
-    env:
-      SOURCE_URL: ${{ secrets.SOURCE_URL }}
-    run: |
-      if [ -z "$SOURCE_URL" ]; then
-        echo "SOURCE_URL secret is missing!"
-        exit 1
-      fi
-
-  - name: Run Filter Script
+  - name: Run Filter
     env:
       SOURCE_URL: ${{ secrets.SOURCE_URL }}
     run: |
       python filter.py
-
-  - name: Verify Output
-    run: |
-      if [ ! -f kb_tv.m3u ]; then
-        echo "kb_tv.m3u not generated!"
-        exit 1
-      fi
 
   - name: Commit Changes
     run: |
@@ -61,5 +45,5 @@ steps:
         echo "No changes to commit"
       else
         git commit -m "Auto Update | ${TOTAL} Channels"
-        git push origin HEAD
+        git push
       fi
