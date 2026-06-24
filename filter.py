@@ -1,212 +1,128 @@
-#!/usr/bin/env python3
-
-import os
 import requests
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+import os
+from concurrent.futures import ThreadPoolExecutor
 
-SOURCE_URL = os.environ.get("SOURCE_URL")
-
-if not SOURCE_URL:
-    raise Exception("SOURCE_URL secret not found")
-
+SOURCE_URL = os.getenv("SOURCE_URL")
 OUTPUT_FILE = "kb_tv.m3u"
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0"
-}
+HEADERS = {"User-Agent": "Mozilla/5.0"}
+
+# =========================
+# BD + INDIA CHANNEL FILTER
+# =========================
+BD_IN_KEYWORDS = [
+    "bangla", "bangladesh", "bd",
+    "india", "in ", "hindi",
+    "channel i", "gtv", "ntv",
+    "atn", "somoy", "ekattor",
+    "jamuna", "desh tv",
+    "boishakhi", "deepto",
+    "sony", "zee", "star",
+    "colors", "sun tv"
+]
 
 BLOCK_WORDS = [
-    "promo",
-    "trailer",
-    "sample",
-    "movie",
-    "vod",
-    "test",
-    ".mp4",
-    ".mkv",
-    ".avi",
-    ".mov",
-    ".wmv",
-    ".flv",
-    ".webm"
-]
-
-COUNTRY_KEYWORDS = [
-    # Bangladesh
-    "bangla",
-    "bangladesh",
-    "channel i",
-    "gtv",
-    "atn",
-    "somoy",
-    "jamuna",
-    "ekattor",
-    "independent",
-    "ntv",
-    "banglavision",
-    "deepto",
-
-    # India
-    "india",
-    "star",
-    "zee",
-    "sony",
-    "colors",
-    "sports18",
-    "star sports",
-    "sony sports",
-    "dd sports",
-    "star jalsha",
-    "zee bangla",
-    "colors bangla",
-    "abp",
-    "news18",
-    "aaj tak"
-]
-
-BEST_CHANNELS = [
-    "star sports",
-    "sony sports",
-    "sports18",
-    "dd sports",
-    "channel i",
-    "gtv",
-    "jamuna",
-    "somoy",
-    "ekattor",
-    "independent",
-    "ntv",
-    "star jalsha",
-    "zee bangla",
-    "colors bangla"
+    "movie", "vod", "trailer", "promo",
+    ".mp4", ".mkv", ".avi", ".mov",
+    "sample", "test", "ad", "advert"
 ]
 
 
-def parse_playlist(content):
-    channels = []
-    lines = content.splitlines()
+# =========================
+# CHECK FUNCTIONS
+# =========================
+def is_valid_channel(text):
+    text = text.lower()
+    return any(k in text for k in BD_IN_KEYWORDS)
 
-    i = 0
-    while i < len(lines):
+
+def is_blocked(text):
+    text = text.lower()
+    return any(b in text for b in BLOCK_WORDS)
+
+
+def parse_m3u(data):
+    lines = data.splitlines()
+    items = []
+
+    for i in range(len(lines) - 1):
         if lines[i].startswith("#EXTINF"):
-            if i + 1 < len(lines):
-                channels.append(
-                    (lines[i].strip(), lines[i + 1].strip())
-                )
-            i += 2
-        else:
-            i += 1
-
-    return channels
+            items.append((lines[i], lines[i + 1]))
+    return items
 
 
-def is_blocked(name, url):
-    text = (name + " " + url).lower()
-
-    return any(word in text for word in BLOCK_WORDS)
-
-
-def is_bd_india(extinf):
-    text = extinf.lower()
-
-    return any(
-        keyword in text
-        for keyword in COUNTRY_KEYWORDS
-    )
-
-
-def priority(extinf):
-    text = extinf.lower()
-
-    for index, keyword in enumerate(BEST_CHANNELS):
-        if keyword in text:
-            return index
-
-    return 999
-
-
-def check_stream(url):
+def check_live(url):
     try:
-        r = requests.get(
-            url,
-            headers=HEADERS,
-            timeout=8,
-            stream=True,
-            allow_redirects=True
-        )
-
+        r = requests.head(url, timeout=6, allow_redirects=True)
         return r.status_code in [200, 206]
-
     except:
         return False
 
 
-playlist = requests.get(
-    SOURCE_URL,
-    headers=HEADERS,
-    timeout=30
-).text
+# =========================
+# MAIN PROCESS
+# =========================
+def main():
+    if not SOURCE_URL:
+        print("ERROR: SOURCE_URL not set")
+        return
 
-channels = parse_playlist(playlist)
+    print("Downloading playlist...")
 
-filtered = []
-seen = set()
+    try:
+        data = requests.get(SOURCE_URL, headers=HEADERS, timeout=25).text
+    except Exception as e:
+        print("Download failed:", e)
+        return
 
-for extinf, url in channels:
+    channels = parse_m3u(data)
+    print("Total Channels Found:", len(channels))
 
-    name = extinf.split(",")[-1]
+    filtered = []
+    seen = set()
 
-    if is_blocked(name, url):
-        continue
+    for extinf, url in channels:
+        if url in seen:
+            continue
 
-    if not is_bd_india(extinf):
-        continue
+        if is_blocked(extinf + url):
+            continue
 
-    if url in seen:
-        continue
+        if not is_valid_channel(extinf):
+            continue
 
-    seen.add(url)
-    filtered.append((extinf, url))
+        seen.add(url)
+        filtered.append((extinf, url))
 
-working = []
+    print("Filtered Channels:", len(filtered))
 
-with ThreadPoolExecutor(max_workers=50) as executor:
+    print("Checking live streams (fast mode)...")
 
-    futures = {
-        executor.submit(check_stream, url): (extinf, url)
-        for extinf, url in filtered
-    }
+    working = []
 
-    for future in as_completed(futures):
+    with ThreadPoolExecutor(max_workers=60) as executor:
+        results = list(executor.map(lambda x: (x, check_live(x[1])), filtered))
 
-        extinf, url = futures[future]
+    for (extinf, url), ok in results:
+        if ok:
+            working.append((extinf, url))
 
-        try:
-            if future.result():
-                working.append((extinf, url))
-        except:
-            pass
+    print("Working Channels:", len(working))
 
-working.sort(key=lambda x: priority(x[0]))
+    # =========================
+    # WRITE OUTPUT
+    # =========================
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
+        f.write(f"# Generated: Auto Filter System\n")
+        f.write(f"# Total Channels: {len(working)}\n\n")
 
-generated = datetime.utcnow().strftime(
-    "%Y-%m-%d %H:%M:%S UTC"
-)
+        for extinf, url in working:
+            f.write(extinf + "\n")
+            f.write(url + "\n")
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    print("DONE ->", OUTPUT_FILE)
 
-    f.write("#EXTM3U\n")
-    f.write(f"# Generated-Time: {generated}\n")
-    f.write(f"# Total-Channels: {len(working)}\n")
-    f.write("# Country: Bangladesh + India\n")
-    f.write("# Generator: KB TV Auto Filter\n")
-    f.write("# Version: 3.0\n\n")
 
-    for extinf, url in working:
-        f.write(extinf + "\n")
-        f.write(url + "\n")
-
-print(
-    f"Done. Saved {len(working)} channels to {OUTPUT_FILE}"
-)
+if __name__ == "__main__":
+    main()
