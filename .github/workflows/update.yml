@@ -4,11 +4,10 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "*/30 * * * *"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     permissions:
@@ -21,15 +20,12 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install
-        run: |
-          pip install requests
+      - run: pip install requests
 
       - name: Run Filter
         env:
           SOURCE_URL: ${{ secrets.SOURCE_URL }}
-        run: |
-          python filter.py
+        run: python filter.py
 
       - name: Commit
         run: |
@@ -43,4 +39,4 @@ jobs:
           git diff --staged --quiet || \
           git commit -m "Auto Update | ${TOTAL} Channels"
 
-          git push
+          git pushpush
