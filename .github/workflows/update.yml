@@ -2,7 +2,6 @@ name: KB TV Auto Filter
 
 on:
 workflow_dispatch:
-
 schedule:
 - cron: "*/30 * * * *"
 
@@ -14,8 +13,10 @@ permissions:
   contents: write
 
 steps:
-  - name: Checkout Repository
+  - name: Checkout
     uses: actions/checkout@v4
+    with:
+      persist-credentials: true
 
   - name: Setup Python
     uses: actions/setup-python@v5
@@ -27,24 +28,33 @@ steps:
       python -m pip install --upgrade pip
       pip install requests
 
+  - name: Verify Secret
+    env:
+      SOURCE_URL: ${{ secrets.SOURCE_URL }}
+    run: |
+      if [ -z "$SOURCE_URL" ]; then
+        echo "ERROR: SOURCE_URL secret is missing"
+        exit 1
+      fi
+
   - name: Run Filter
     env:
       SOURCE_URL: ${{ secrets.SOURCE_URL }}
     run: |
       python filter.py
 
-  - name: Commit and Push
+  - name: Commit Changes
     run: |
       TOTAL=$(grep -c "^#EXTINF" kb_tv.m3u || echo 0)
 
-      git config --global user.name "github-actions[bot]"
-      git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       git add kb_tv.m3u
 
-      if git diff --staged --quiet; then
-        echo "No changes detected."
+      if git diff --cached --quiet; then
+        echo "No changes detected"
       else
         git commit -m "Auto Update | ${TOTAL} Channels"
-        git push origin main
+        git push
       fi
