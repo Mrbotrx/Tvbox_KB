@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 278 CHANNELS
+# TOTAL: 281 CHANNELS
 
 #EXTINF:-1 tvg-id="4FunTV.pl@SD" tvg-logo="https://i.imgur.com/rI1wo2l.png" group-title="Music",4 Fun TV (576i) [Not 24/7]
 https://stream.4fun.tv:8888/hls/4f_high/index.m3u8
@@ -155,6 +155,8 @@ https://cloudstreamhntv.tek4tv.vn/capture/smil:HN1.smil/chunklist.m3u8
 https://streamer1.connectto.com/HIGHVISION_WEB_1205/index.m3u8
 #EXTINF:-1 tvg-id="HirTV.hu@SD" tvg-logo="https://i.imgur.com/xmIUDRN.png" group-title="News",Hir TV (1080p)
 https://video11.videa.hu/static/live/8.2966061.2530409.1.5.590.590/index.m3u8
+#EXTINF:-1 tvg-id="HluttawSD.mm@SD" tvg-logo="https://i.imgur.com/Gffq8ks.png" group-title="Legislative",Hluttaw S & D
+https://mrtvott.com/cache/MRTV-HLUTTAW/master.m3u8
 #EXTINF:-1 tvg-id="HopeChannelInterAmerica.us@SD" tvg-logo="https://i.imgur.com/wzvgAch.png" group-title="Religious",Hope Channel Inter-America
 https://jstre.am/live/jsl:EC0Mq0i6HJU.m3u8
 #EXTINF:-1 tvg-id="HopeChannelInternational.us@SD" tvg-logo="https://i.imgur.com/PNihgl2.png" group-title="Religious",Hope Channel International (1080p)
@@ -241,8 +243,12 @@ https://mntv.livebox.co.in/mntvhls/live.m3u8
 https://bozztv.com/rongo/rongo-MohonaTV/index.m3u8
 #EXTINF:-1 tvg-id="MoonTV.in@SD" tvg-logo="https://i.imgur.com/3l25EZI.png" group-title="News",Moon TV (720p)
 https://player.mslivestream.net/mslive/e10bb900976df9177b9a080314f26f86.sdp/index.m3u8
+#EXTINF:-1 tvg-id="MRTV.mm@SD" tvg-logo="https://i.imgur.com/uyv7oJH.png" group-title="General",MRTV
+https://mrtvott.com/cache/MRTV-HD/master.m3u8
 #EXTINF:-1 tvg-id="MRTVEntertainment.mm@SD" tvg-logo="https://i.imgur.com/c9q6oT0.png" group-title="Entertainment",MRTV Entertainment
 https://mrtvott.com/cache/MRTV-Ent-HD/master.m3u8
+#EXTINF:-1 tvg-id="MRTVFarmer.mm@SD" tvg-logo="https://i.imgur.com/f4PWvrW.jpg" group-title="Documentary;Lifestyle",MRTV Farmer
+https://mrtvott.com/cache/MRTV-FARMER/master.m3u8
 #EXTINF:-1 tvg-id="MRTVNews.mm@SD" tvg-logo="https://i.imgur.com/5eK8Bc4.png" group-title="News",MRTV News
 https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8
 #EXTINF:-1 tvg-id="MRTVNRC.mm@SD" tvg-logo="https://i.imgur.com/5aLFslk.jpg" group-title="Culture",MRTV NRC
@@ -309,6 +315,8 @@ http://live.stream.cdn.pamirtv.com/ptv/d0dbe915091d400bd8ee7f27f0791303.sdp/inde
 https://stream.nmih.hu:4102/live.m3u8
 #EXTINF:-1 tvg-id="ParsTV.us@SD" tvg-logo="https://i.imgur.com/RQ5DzEE.png" group-title="General",Pars TV
 https://parshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PassionNovelas.ci@SD" tvg-logo="https://i.imgur.com/boo9jmf.png" group-title="Entertainment",Passion Novelas (1080p)
+http://41.223.30.230/PASSIONTV/index.m3u8
 #EXTINF:-1 tvg-id="PayameAfghanTV.us@SD" tvg-logo="https://i.imgur.com/t9wYYY9.png" group-title="General",Payam-e-Afghan TV (480p) [Not 24/7]
 https://g5nl6xx5lpq6-hls-live.5centscdn.com/live1234/2621b29e501b445fabf227b086123b70.sdp/mono.m3u8
 #EXTINF:-1 tvg-id="PeerTVSouthTyrol.it@SD" tvg-logo="https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png" group-title="Outdoor;Travel",Peer TV South Tyrol (1280p)
@@ -333,8 +341,6 @@ https://edge.essastream.com/rdntv/tracks-v1a1/mono.m3u8
 https://video.wilohosting.com:19360/redinteriortv/redinteriortv.m3u8
 #EXTINF:-1 tvg-id="RENTV.ru@SD" tvg-logo="https://i.imgur.com/0Tu5lte.png" group-title="General",REN TV (576p)
 http://94.230.128.107:8080/PEH_TB/index.m3u8
-#EXTINF:-1 tvg-id="ResurrectionTV.gh@SD" tvg-logo="https://i.imgur.com/IncyJW8.png" group-title="Undefined",Resurrection TV (720p)
-https://1681360479.rsc.cdn77.org/1681360479/index.m3u8
 #EXTINF:-1 tvg-id="RitoqueTV.cl@SD" tvg-logo="https://i.imgur.com/nTVJcFA.png" group-title="Music",Ritoque TV (720p)
 https://streaming.purum.cl/ritoquetv/index.m3u8
 #EXTINF:-1 tvg-id="RNEparatodos.es@SD" tvg-logo="https://i.ibb.co/dsgrWTP8/fast-rneaudioparatodos-nac.png" group-title="General",RNE para todos (720p)
@@ -431,6 +437,8 @@ https://lotus.stingray.com/manifest/karaoke-kar000-montreal/samsungtvplus/master
 https://lotus.stingray.com/manifest/naturescape-a003-montreal/samsungtvplus/master.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Stingray ZenLIFE (1080p)
 https://lotus.stingray.com/manifest/zenlife-zen001-montreal/samsungtvplus/master.m3u8
+#EXTINF:-1 tvg-id="SubinTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/subintvtamil.png" group-title="Entertainment",Subin TV (1080p)
+https://stream.galaxyott.live/live/subintv/index.m3u8
 #EXTINF:-1 tvg-id="SudanTV.sd@SD" tvg-logo="https://i.imgur.com/XUPAYAA.png" group-title="Undefined",Sudan TV (360p)
 https://cdn-globecast.akamaized.net/live/eds/sudan_tv/hls_roku/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Super TV Brescia (720p)
@@ -525,8 +533,6 @@ https://zfmzoetermeer.nl/live/master.m3u8
 https://trs1.aynaott.com/discoverykids/index.m3u8
 #EXTINF:-1 tvg-id="ZorTV.uz@SD" tvg-logo="https://i.imgur.com/NuzyhVM.png" group-title="Entertainment;Music",Zo'r TV (576p)
 https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="ZonavisionTV.do@SD" tvg-logo="https://imgur.com/B3PrrMH.png" group-title="General",Zonavision TV [Not 24/7]
-https://ds.tvabierta.net/memfs/b295f254-7af9-45e4-bfc6-7e0bba41929d.m3u8
 #EXTINF:-1 tvg-id="India.ru@SD" tvg-logo="https://i.imgur.com/xDVcDOc.png" group-title="Entertainment",Индия (576p)
 http://31.148.48.15/Zee_TV_Russia/index.m3u8
 #EXTINF:-1 tvg-id="KVNTV.ru@SD" tvg-logo="https://i.imgur.com/Vw3LFLX.png" group-title="Comedy",КВН ТВ (576p)
