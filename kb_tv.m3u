@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 281 CHANNELS
+# TOTAL: 278 CHANNELS
 
 #EXTINF:-1 tvg-id="4FunTV.pl@SD" tvg-logo="https://i.imgur.com/rI1wo2l.png" group-title="Music",4 Fun TV (576i) [Not 24/7]
 https://stream.4fun.tv:8888/hls/4f_high/index.m3u8
@@ -243,14 +243,8 @@ https://mntv.livebox.co.in/mntvhls/live.m3u8
 https://bozztv.com/rongo/rongo-MohonaTV/index.m3u8
 #EXTINF:-1 tvg-id="MoonTV.in@SD" tvg-logo="https://i.imgur.com/3l25EZI.png" group-title="News",Moon TV (720p)
 https://player.mslivestream.net/mslive/e10bb900976df9177b9a080314f26f86.sdp/index.m3u8
-#EXTINF:-1 tvg-id="MRTV.mm@SD" tvg-logo="https://i.imgur.com/uyv7oJH.png" group-title="General",MRTV
-https://mrtvott.com/cache/MRTV-HD/master.m3u8
-#EXTINF:-1 tvg-id="MRTVEntertainment.mm@SD" tvg-logo="https://i.imgur.com/c9q6oT0.png" group-title="Entertainment",MRTV Entertainment
-https://mrtvott.com/cache/MRTV-Ent-HD/master.m3u8
 #EXTINF:-1 tvg-id="MRTVFarmer.mm@SD" tvg-logo="https://i.imgur.com/f4PWvrW.jpg" group-title="Documentary;Lifestyle",MRTV Farmer
 https://mrtvott.com/cache/MRTV-FARMER/master.m3u8
-#EXTINF:-1 tvg-id="MRTVNews.mm@SD" tvg-logo="https://i.imgur.com/5eK8Bc4.png" group-title="News",MRTV News
-https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8
 #EXTINF:-1 tvg-id="MRTVNRC.mm@SD" tvg-logo="https://i.imgur.com/5aLFslk.jpg" group-title="Culture",MRTV NRC
 https://mrtvott.com/cache/MRTV-NRC-HD/master.m3u8
 #EXTINF:-1 tvg-id="Musavision.do@SD" tvg-logo="https://i.imgur.com/wMse6cT.png" group-title="General",Musavision (1080p)
