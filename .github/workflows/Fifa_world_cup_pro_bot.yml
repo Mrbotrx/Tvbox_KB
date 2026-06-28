@@ -7,30 +7,30 @@ on:
 
 jobs:
   update:
-    name: Fifa_world_cup_pro Auto Update
+    name: Fifa_world_cup_pro Update
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Fifa_world_cup_pro
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: Fifa_world_cup_pro
 
-      - name: Setup Python Bot
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install Requirements
+      - name: Install
         run: pip install -r requirements.txt
 
-      - name: Run Fifa_world_cup_pro Bot
+      - name: Run Bot
+        env:
+          PLAYLIST_URL: ${{ secrets.PLAYLIST_URL }}
         run: python Fifa.py
 
-      - name: Save Update
+      - name: Commit
         run: |
           git config user.name "Fifa_world_cup_pro Bot"
-          git config user.email "fifa-world-cup-pro-bot@github.com"
-          git add .
-          git commit -m "Fifa_world_cup_pro Bot Update" || exit 0
-          git push origin Fifa_world_cup_pro
+          git config user.email "actions@github.com"
+          git add Fifa_world_cup_pro.m3u
+          git commit -m "Auto update" || exit 0
+          git push
