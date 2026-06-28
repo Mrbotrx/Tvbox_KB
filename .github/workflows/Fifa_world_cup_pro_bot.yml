@@ -13,6 +13,7 @@ on:
 
 jobs:
   update:
+
     runs-on: ubuntu-latest
 
     permissions:
@@ -20,28 +21,41 @@ jobs:
 
     steps:
 
-      - name: Checkout
+      - name: Checkout Fifa_world_cup_pro Branch
         uses: actions/checkout@v4
         with:
           ref: Fifa_world_cup_pro
+          fetch-depth: 0
+
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install packages
-        run: pip install -r requirements.txt
 
-      - name: Run Python
+      - name: Install Requirements
+        run: |
+          pip install -r requirements.txt
+
+
+      - name: Run Fifa Bot
         env:
           PLAYLIST_URL: ${{ secrets.PLAYLIST_URL }}
-        run: python Fifa.py
+        run: |
+          python Fifa.py
 
-      - name: Commit update
+
+      - name: Commit Update
         run: |
           git config user.name "Fifa_world_cup_pro Bot"
           git config user.email "github-actions@github.com"
+
           git add .
-          git commit -m "Auto update" || exit 0
-          git push origin Fifa_world_cup_propro
+
+          git commit -m "Auto update Fifa_world_cup_pro" || echo "No changes"
+
+
+      - name: Push Update
+        run: |
+          git push origin Fifa_world_cup_pro
