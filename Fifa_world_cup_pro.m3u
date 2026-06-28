@@ -1,0 +1,101 @@
+#EXTM3U
+#PLAYLIST: Indian BDIX
+#EXTENC: UTF-8
+
+# Playlist Name: Indian BDIX
+# Last Update: 06:15 PM 20-06-2026
+# Facebook Page: https://www.facebook.com/profile.php?id=61590515402166
+# Fb Page Name : M3U World 4K
+# This link are available freely on the internet . So, don't disturb me.
+
+#EXTM3U
+
+# Bangla Entertainment
+#EXTINF:-1 tvg-id="ZeeBangla4K" tvg-name="Zee Bangla 4K" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/79/Zee_Bangla_HD_%282025%29.svg/revision/latest?cb=20250609091454" group-title="Bangla",Zee Bangla 4K
+http://starhub.pro/live/Anthony2/Anthony123/435.ts
+
+#EXTINF:-1 tvg-id="ColorsBangla4K" tvg-name="Colors Bangla 4K" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/3e/Colors_Bangla_HD.jpg/revision/latest?cb=20240314081816" group-title="Bangla",Colors Bangla 4K
+http://starhub.pro/live/Anthony2/Anthony123/98882.ts
+
+#EXTINF:-1 tvg-id="StarJalsa4K" tvg-name="Star Jalsa 4K" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ac/Star_Jalsha_HD_2019_Chalo_Paltai.png/revision/latest?cb=20240319075624" group-title="Bangla",Star Jalsa 4K
+http://starhub.pro/live/Anthony2/Anthony123/198.ts
+
+#EXTINF:-1 tvg-id="JalsaMovies4K" tvg-name="Jalsa Movies 4K" tvg-logo="" group-title="Bangla",Jalsa Movies 4K
+http://starhub.pro/live/Anthony2/Anthony123/98884.ts
+
+# Movies
+#EXTINF:-1 tvg-id="SonyMax4K" tvg-name="Sony Max 4K" tvg-logo="" group-title="Movies",Sony Max 4K
+http://starhub.pro/live/Anthony2/Anthony123/98857.ts
+
+#EXTINF:-1 tvg-id="AndPictures4K" tvg-name="& Pictures 4K" tvg-logo="" group-title="Movies",& Pictures 4K
+http://starhub.pro/live/Anthony2/Anthony123/98856.ts
+
+#EXTINF:-1 tvg-id="StarGold4K" tvg-name="Star Gold 4K" tvg-logo="" group-title="Movies",Star Gold 4K
+http://starhub.pro/live/Anthony2/Anthony123/98858.ts
+
+#EXTINF:-1 tvg-id="StarGoldSelect4K" tvg-name="Star Gold Select 4K" tvg-logo="" group-title="Movies",Star Gold Select 4K
+http://starhub.pro/live/Anthony2/Anthony123/98859.ts
+
+#EXTINF:-1 tvg-id="ZeeCinema4K" tvg-name="Zee Cinema 4K" tvg-logo="" group-title="Movies",Zee Cinema 4K
+http://starhub.pro/live/Anthony2/Anthony123/98860.ts
+
+#EXTINF:-1 tvg-id="ColorsCineplex4K" tvg-name="Colors Cineplex 4K" tvg-logo="" group-title="Movies",Colors Cineplex 4K
+http://starhub.pro/live/Anthony2/Anthony123/9378.ts
+
+# Documentary
+#EXTINF:-1 tvg-id="AnimalPlanet4K" tvg-name="Animal Planet 4K" tvg-logo="" group-title="Documentary",Animal Planet 4K
+http://starhub.pro/live/Anthony2/Anthony123/9391.ts
+
+#EXTINF:-1 tvg-id="HistoryTV184K" tvg-name="History TV18 4K" tvg-logo="" group-title="Documentary",History TV18 4K
+http://starhub.pro/live/Anthony2/Anthony123/98877.ts
+
+#EXTINF:-1 tvg-id="Discovery4K" tvg-name="Discovery 4K" tvg-logo="" group-title="Documentary",Discovery 4K
+http://starhub.pro/live/Anthony2/Anthony123/98872.ts
+
+#EXTINF:-1 tvg-id="NationalGeo4K" tvg-name="National Geographic 4K" tvg-logo="" group-title="Documentary",National Geographic 4K
+http://starhub.pro/live/Anthony2/Anthony123/98874.ts
+
+#EXTINF:-1 tvg-id="SonyBBCEarth4K" tvg-name="Sony BBC Earth 4K" tvg-logo="" group-title="Documentary",Sony BBC Earth 4K
+http://starhub.pro/live/Anthony2/Anthony123/98871.ts
+
+#EXTINF:-1 tvg-id="TravelXP4K" tvg-name="Travel XP 4K" tvg-logo="" group-title="Documentary",Travel XP 4K
+http://starhub.pro/live/Anthony2/Anthony123/1623.ts
+
+# Kids
+#EXTINF:-1 tvg-id="Nick4K" tvg-name="Nick 4K" tvg-logo="" group-title="Kids",Nick 4K
+http://starhub.pro/live/Anthony2/Anthony123/7438.ts
+
+# Sports
+#EXTINF:-1 tvg-id="TSportsHD" tvg-name="T Sports HD" tvg-logo="" group-title="Sports",T Sports HD
+http://starhub.pro/live/Anthony2/Anthony123/113069.ts
+
+#EXTINF:-1 tvg-id="PTV4K" tvg-name="PTV 4K" tvg-logo="" group-title="Sports",PTV 4K
+http://starhub.pro/live/Anthony2/Anthony123/61674.ts
+
+#EXTINF:-1 tvg-id="StarSports14K" tvg-name="Star Sports 1 4K" tvg-logo="" group-title="Sports",Star Sports Select 1 4K
+http://starhub.pro/live/Anthony2/Anthony123/238.ts
+
+#EXTINF:-1 tvg-id="StarSports24K" tvg-name="Star Sports 2 4K" tvg-logo="" group-title="Sports",Star Sports select 2 4K
+http://starhub.pro/live/Anthony2/Anthony123/148801.ts
+
+#EXTINF:-1 tvg-id="SonyTen14K" tvg-name="Sony Ten 1 4K" tvg-logo="" group-title="Sports",Sony Ten 1 4K
+http://starhub.pro/live/Anthony2/Anthony123/154.ts
+
+#EXTINF:-1 tvg-id="SonyTen24K" tvg-name="Sony Ten 2 4K" tvg-logo="" group-title="Sports",Sony Ten 2 4K
+http://starhub.pro/live/Anthony2/Anthony123/31314.ts
+
+#EXTINF:-1 tvg-id="SonyTen54K" tvg-name="Sony Ten 5 4K" tvg-logo="" group-title="Sports",Sony Ten 5 4K
+http://starhub.pro/live/Anthony2/Anthony123/176.ts
+
+#EXTINF:-1 tvg-id="FoxCricket5014K" tvg-name="Fox Cricket 501 4K" tvg-logo="" group-title="Sports",Fox Cricket 501 4K
+http://starhub.pro/live/Anthony2/Anthony123/1856.ts
+
+#EXTINF:-1 tvg-id="SuperSport14K" tvg-name="SuperSport 1 4K" tvg-logo="" group-title="Sports",Star Sports 1 4K
+http://starhub.pro/live/Anthony2/Anthony123/9397.ts
+
+#EXTINF:-1 tvg-id="SuperSport24K" tvg-name="SuperSport 2 4K" tvg-logo="" group-title="Sports",Star Sports 2 4K
+http://starhub.pro/live/Anthony2/Anthony123/9398.ts
+
+# Lifestyle
+#EXTINF:-1 tvg-id="ZeeZest4K" tvg-name="Zee Zest 4K" tvg-logo="" group-title="Lifestyle",Zee Zest 4K
+http://starhub.pro/live/Anthony2/Anthony123/380446.ts
