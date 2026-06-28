@@ -1,0 +1,36 @@
+name: Fifa_world_cup_pro Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  update:
+    name: Fifa_world_cup_pro Auto Update
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Fifa_world_cup_pro
+        uses: actions/checkout@v4
+        with:
+          ref: Fifa_world_cup_pro
+
+      - name: Setup Python Bot
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Requirements
+        run: pip install -r requirements.txt
+
+      - name: Run Fifa_world_cup_pro Bot
+        run: python Fifa.py
+
+      - name: Save Update
+        run: |
+          git config user.name "Fifa_world_cup_pro Bot"
+          git config user.email "fifa-world-cup-pro-bot@github.com"
+          git add .
+          git commit -m "Fifa_world_cup_pro Bot Update" || exit 0
+          git push origin Fifa_world_cup_pro
