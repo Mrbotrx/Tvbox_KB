@@ -3,55 +3,29 @@ name: Fifa_world_cup_pro Bot
 on:
   workflow_dispatch:
 
-  schedule:
-    - cron: "0 */6 * * *"
-
-  push:
-    branches:
-      - Fifa_world_cup_pro
-
-
 jobs:
   update:
-    name: Fifa_world_cup_pro Auto Update
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
+      - uses: actions/checkout@v4
 
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          ref: Fifa_world_cup_pro
-
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      - run: pip install -r requirements.txt
 
-      - name: Install Requirements
-        run: |
-          pip install -r requirements.txt
-
-
-      - name: Run Fifa Bot
+      - run: python Fifa.py
         env:
           PLAYLIST_URL: ${{ secrets.PLAYLIST_URL }}
-        run: |
-          python Fifa.py
 
-
-      - name: Commit Changes
-        run: |
+      - run: |
           git config user.name "Fifa_world_cup_pro Bot"
           git config user.email "github-actions@github.com"
-
-          git add Fifa_world_cup_pro.m3u
-
-          git commit -m "Fifa_world_cup_pro Auto Update" || exit 0
-
-          git push origin Fifa_world_cup_pro
+          git add .
+          git commit -m "Update" || exit 0
+          git pushpush
