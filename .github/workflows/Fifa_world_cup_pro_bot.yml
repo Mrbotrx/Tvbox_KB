@@ -1,61 +1,45 @@
-name: Fifa_world_cup_pro Bot
+name: Auto Update FIFA Playlist
 
 on:
+  schedule:
+    - cron: '0 */2 * * *'   # Every 2 hours (UTC)
   workflow_dispatch:
 
-  push:
-    branches:
-      - Fifa_world_cup_pro
-
-  schedule:
-    - cron: "0 */2 * * *"
-
+permissions:
+  contents: write
 
 jobs:
   update:
-
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
-
-      - name: Checkout Fifa_world_cup_pro Branch
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          ref: Fifa_world_cup_pro
-          fetch-depth: 0
-
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
-
-      - name: Install Requirements
+      - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          pip install requests
 
-
-      - name: Run Fifa Bot
+      - name: Run FIFA Script
         env:
           PLAYLIST_URL: ${{ secrets.PLAYLIST_URL }}
+        run: python Fifa.py
+
+      - name: Commit and Push
         run: |
-          python Fifa.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          git add Fifa_world_cup_pro.m3u
 
-      - name: Commit Update
-        run: |
-          git config user.name "Fifa_world_cup_pro Bot"
-          git config user.email "github-actions@github.com"
+          git diff --cached --quiet && exit 0
 
-          git add .
+          git commit -m "Auto update playlist"
 
-          git commit -m "Auto update Fifa_world_cup_pro" || echo "No changes"
-
-
-      - name: Push Update
-        run: |
-          git push origin Fifa_world_cup_pro
+          git push
