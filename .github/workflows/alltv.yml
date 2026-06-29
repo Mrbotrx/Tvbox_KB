@@ -1,0 +1,54 @@
+name: IPTV BOT X KB
+
+on:
+  schedule:
+    # Every 2 hours
+    - cron: "0 */2 * * *"
+
+  workflow_dispatch:
+
+
+jobs:
+
+  update-playlist:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+
+      - name: Install Requirements
+        run: |
+          pip install -r requirements.txt
+
+
+      - name: Download IPTV Playlist
+        env:
+          VPN_URL: ${{ secrets.VPN_URL }}
+        run: |
+          python downloader.py
+
+
+      - name: Commit Updated Playlist
+        run: |
+          git config --global user.name "IPTV BOT X KB"
+          git config --global user.email "actions@github.com"
+
+          git add newtv.m3u
+
+          git commit -m "IPTV BOT X KB Auto Update" || echo "No changes"
+
+          git push
