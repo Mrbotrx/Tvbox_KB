@@ -28,32 +28,24 @@ def download_m3u():
 
         response.raise_for_status()
 
-        # Read playlist
         playlist = response.text
-
-        # Split into lines
         lines = playlist.splitlines()
 
-        # Find first channel (#EXTINF)
         start = 0
         for i, line in enumerate(lines):
             if line.startswith("#EXTINF"):
                 start = i
                 break
 
-        # Keep only channels
         channels = lines[start:]
 
-        # Count channels
         channel_count = sum(
             1 for line in channels
             if line.startswith("#EXTINF")
         )
 
-        # Current date & time
         update_time = datetime.now().strftime("%I:%M %p %d-%m-%Y")
 
-        # Create new header
         header = [
             "#EXTM3U",
             "#PLAYLIST: IPTV BOT X KB",
@@ -65,10 +57,8 @@ def download_m3u():
             ""
         ]
 
-        # Final playlist
         final_playlist = "\n".join(header + channels)
 
-        # Save file
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write(final_playlist)
 
