@@ -1,15 +1,13 @@
 import os
 import requests
 import json
-from datetime import datetime
 from telegram import Telegram
+from datetime import datetime
 
 INPUT_URL = os.getenv("INPUT_URL")
 
 def fetch(url):
-    r = requests.get(url, timeout=20)
-    r.raise_for_status()
-    return r.text.splitlines()
+    return requests.get(url, timeout=20).text.splitlines()
 
 def process(lines):
     m3u = ["#EXTM3U"]
@@ -32,44 +30,47 @@ def process(lines):
     return m3u, json_data, count
 
 def main():
-    os.makedirs("output", exist_ok=True)
-
     bot = Telegram()
 
-    print("[+] Fetching playlist...")
-    lines = fetch(INPUT_URL)
-
-    print("[+] Processing...")
-    m3u, json_data, count = process(lines)
-
-    m3u_file = "output/bd_fifa.m3u8"
-    json_file = "output/channels.json"
-
-    with open(m3u_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(m3u))
-
-    with open(json_file, "w", encoding="utf-8") as f:
-        json.dump(json_data, f, indent=2)
-
-    caption = f"🔥 KB TV PRO\n📺 Channels: {count}\n⏰ {datetime.utcnow()}"
-
-    # safer chat detection
     updates = bot.get_updates()
-    chat_id = None
 
-    if updates and updates.get("result"):
+    if not updates or "result" not in updates:
+        print("No updates")
+        return
+
+    for u in updates["result"]:
         try:
-            chat_id = updates["result"][-1]["message"]["chat"]["id"]
-        except:
-            pass
+            msg = u["message"]["text"]
+            chat_id = u["message"]["chat"]["id"]
 
-    if chat_id:
-        print("[+] Sending Telegram...")
-        bot.send_message(chat_id, caption)
-        bot.send_file(chat_id, m3u_file, "M3U Playlist")
-        bot.send_file(chat_id, json_file, "JSON Data")
-    else:
-        print("[!] No chat_id found. Send message to bot first.")
+            # 👉 START COMMAND
+            if msg == "/start":
+                print("[+] Start command detected")
+
+                lines = fetch(INPUT_URL)
+                m3u, json_data, count = process(lines)
+
+                os.makedirs("output", exist_ok=True)
+
+                m3u_file = "output/bd_fifa.m3u8"
+                json_file = "output/channels.json"
+
+                with open(m3u_file, "w") as f:
+                    f.write("\n".join(m3u))
+
+                with open(json_file, "w") as f:
+                    json.dump(json_data, f, indent=2)
+
+                caption = f"""🔥 KB TV PRO
+📺 Channels: {count}
+⏰ {datetime.utcnow()}"""
+
+                bot.send_message(chat_id, "🚀 Generating playlist...")
+                bot.send_file(chat_id, m3u_file, "M3U Playlist")
+                bot.send_file(chat_id, json_file, "Channels JSON")
+
+        except:
+            continue
 
 if __name__ == "__main__":
     main()
