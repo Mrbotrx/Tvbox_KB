@@ -1,6 +1,7 @@
 import requests
 import os
 import json
+from datetime import datetime
 
 INPUT_URL = os.getenv("INPUT_URL")
 
@@ -8,60 +9,78 @@ M3U_OUT = "output/bd_fifa.m3u8"
 JSON_OUT = "output/channels.json"
 
 def fetch(url):
-    return requests.get(url, timeout=20).text.splitlines()
-
-def is_valid(line):
-    return line and not line.startswith("#")
+    r = requests.get(url, timeout=20)
+    r.raise_for_status()
+    return r.text.splitlines()
 
 def process(lines):
-    m3u = []
-    json_list = []
+    m3u_data = []
+    json_data = []
 
-    current_title = None
+    title = None
+    count = 0
 
-    for i, line in enumerate(lines):
+    for line in lines:
         if line.startswith("#EXTINF"):
-            current_title = line
-            continue
+            title = line
+        elif line and not line.startswith("#"):
+            if title:
+                m3u_data.append(title)
+                m3u_data.append(line)
 
-        if is_valid(line):
-            # save m3u
-            m3u.append(current_title)
-            m3u.append(line)
+                json_data.append({
+                    "title": title,
+                    "url": line
+                })
 
-            # save json
-            json_list.append({
-                "title": current_title,
-                "url": line
-            })
+                count += 1
+                title = None
 
-            current_title = None
+    return m3u_data, json_data, count
 
-    return m3u, json_list
+def save_m3u(path, data, count):
+    now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
 
-def save_m3u(data):
-    with open(M3U_OUT, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
-        f.write("\n".join(data))
+    header = [
+        "#EXTM3U",
+        "#PLAYLIST: KB TV PRO",
+        f"#CREATED: {now}",
+        f"#CHANNELS: {count}",
+        ""
+    ]
 
-def save_json(data):
-    with open(JSON_OUT, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(header + data))
+
+def save_json(path, data, count):
+    output = {
+        "playlist": "KB TV PRO",
+        "created": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
+        "total_channels": count,
+        "channels": data
+    }
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2)
 
 def main():
-    print("Fetching playlist...")
-    lines = fetch(INPUT_URL)
-
-    print("Processing channels...")
-    m3u, json_data = process(lines)
-
-    print("Saving outputs...")
     os.makedirs("output", exist_ok=True)
 
-    save_m3u(m3u)
-    save_json(json_data)
+    print("[+] Fetching playlist...")
+    lines = fetch(INPUT_URL)
 
-    print("Done!")
+    print("[+] Processing channels...")
+    m3u, json_data, count = process(lines)
+
+    print(f"[+] Total channels found: {count}")
+
+    print("[+] Saving M3U...")
+    save_m3u(M3U_OUT, m3u, count)
+
+    print("[+] Saving JSON...")
+    save_json(JSON_OUT, json_data, count)
+
+    print("[✓] KB TV PRO build complete!")
 
 if __name__ == "__main__":
     main()
