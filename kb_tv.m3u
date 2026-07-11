@@ -203,8 +203,6 @@ https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8
 https://str2.yodacdn.net/kanal35/index.m3u8
 #EXTINF:-1 tvg-id="KhabarbinTV.ir@HD" tvg-logo="" group-title="Undefined",Khabarbin TV
 https://khbhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="KoraTV.pe@SD" tvg-logo="https://i.imgur.com/ahBYv4x.png" group-title="Entertainment",Kora TV
-https://s3.tvdatta.com:3700/live/jjrtvlive.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru@SD" tvg-logo="https://smotret.tv/images/kulinar-tv.webp" group-title="Cooking",Kulinar TV (576p)
 https://api.alpaca.t62a.com/hls/9110/stream0.m3u8
 #EXTINF:-1 tvg-id="KVNTV.ru@SD" tvg-logo="https://i.imgur.com/Vw3LFLX.png" group-title="Comedy",KVN TV (576p)
@@ -439,6 +437,8 @@ http://sivantv.livebox.co.in/sivantvhls/sivan.m3u8
 http://euvia.cdn.ses-ps.com/HLS-Live/index.m3u8
 #EXTINF:-1 tvg-id="SorTV.md@SD" tvg-logo="https://i.imgur.com/BcfZgD8.png" group-title="General",Sor TV (720p)
 http://188.237.212.16:8888/live/cameraFeed.m3u8
+#EXTINF:-1 tvg-id="StarSports1.in@HD" tvg-logo="https://i.imgur.com/E5jjKHI.png" group-title="Sports",Star Sports 1 HD (1080p)
+http://103.253.18.58:8000/play/a00m
 #EXTINF:-1 tvg-id="StingrayClassica.ca@SD" tvg-logo="https://i.imgur.com/nh1k5RC.png" group-title="Music",Stingray Classica (1080p)
 https://lotus.stingray.com/manifest/classica-cla008-montreal/samsungtvplus/master.m3u8
 #EXTINF:-1 tvg-id="StingrayCMusic.ca@SD" tvg-logo="https://i.imgur.com/3UppN5P.png" group-title="Music",Stingray CMusic (1080p)
