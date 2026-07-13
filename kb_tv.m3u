@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 282 CHANNELS
+# TOTAL: 293 CHANNELS
 
 #EXTINF:-1 tvg-id="4FunTV.pl@SD" tvg-logo="https://i.imgur.com/rI1wo2l.png" group-title="Music",4 Fun TV (576i) [Not 24/7]
 https://stream.4fun.tv:8888/hls/4f_high/index.m3u8
@@ -355,8 +355,6 @@ https://tv.pointville.ag/hls/mystream.m3u8
 https://polartv.webredirect.org/memfs/319ac83c-e602-4e91-8104-2b5501380b5e.m3u8
 #EXTINF:-1 tvg-id="PolimerTV.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/s143665_ld_h15_aa.png?lock=720x540" group-title="Entertainment",Polimer TV (720p)
 https://cdn-2.pishow.tv/live/1241/master.m3u8
-#EXTINF:-1 tvg-id="PraiseJesusTowerTV.ug@SD" tvg-logo="https://i.imgur.com/KT4qIve.png" group-title="Religious",Praise Jesus Tower TV (480p)
-https://vsrv1.az-streamingserver.com:3555/live/dyjoqlgklive.m3u8
 #EXTINF:-1 tvg-id="QelloConcertsbyStingray.ca@SD" tvg-logo="https://i.imgur.com/IRyFTWq.png" group-title="Music",Qello Concerts by Stingray (1080p)
 https://lotus.stingray.com/manifest/qello-qello001-montreal/samsungtvplus/master.m3u8
 #EXTINF:-1 tvg-id="RPlus.in@SD" tvg-logo="https://i.imgur.com/XUnWcZF.png" group-title="Undefined",R Plus (768p)
@@ -373,6 +371,8 @@ https://1681360479.rsc.cdn77.org/1681360479/index.m3u8
 https://streaming.purum.cl/ritoquetv/index.m3u8
 #EXTINF:-1 tvg-id="RNEparatodos.es@SD" tvg-logo="https://i.ibb.co/dsgrWTP8/fast-rneaudioparatodos-nac.png" group-title="General",RNE para todos (720p)
 https://rtvelivestream.rtve.es/rtvesec/rne/rne_para_todos_main.m3u8
+#EXTINF:-1 tvg-id="RocavisionTV.do@SD" tvg-logo="https://imgur.com/FkHqqsi.jpg" group-title="General",Rocavision TV [Not 24/7]
+https://streamunoapp.com:3331/live/rocavisiontvlive.m3u8
 #EXTINF:-1 tvg-id="RTJVA.tg@SD" tvg-logo="https://i.imgur.com/Ja3HVLB.jpg" group-title="Religious",RT JVA (720p) [Not 24/7]
 https://cdn140m.panaccess.com/HLS/RTVJA/index.m3u8
 #EXTINF:-1 tvg-id="RTGTV.ru@SD" tvg-logo="https://i.imgur.com/ZMKPAho.png" group-title="Travel",RTG TV (720p)
@@ -567,3 +567,25 @@ https://ds.tvabierta.net/memfs/b295f254-7af9-45e4-bfc6-7e0bba41929d.m3u8
 http://31.148.48.15/Zee_TV_Russia/index.m3u8
 #EXTINF:-1 tvg-id="MaturTV.ru@SD" tvg-logo="https://i.imgur.com/Pg7K7eV.png" group-title="Music",Матур ТВ (1080p)
 https://public.streaming.matur-tv.ru/hls/h264_aac/stream.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",农安新闻综合 [Geo-blocked]
+https://stream2.jlntv.cn/naxw/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",前郭综合 [Geo-blocked]
+https://stream2.jlntv.cn/qg/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",吉林市新闻综合 [Geo-blocked]
+https://stream2.jlntv.cn/jilin1/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",四平新闻综合 [Geo-blocked]
+https://stream2.jlntv.cn/sptv/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",延边新闻综合 [Geo-blocked]
+https://stream2.jlntv.cn/jlyb/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",松原新闻综合 [Geo-blocked]
+https://stream2.jlntv.cn/sytv/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",白山新闻综合 [Geo-blocked]
+https://stream2.jlntv.cn/baishan1/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",辽源新闻综合 [Geo-blocked]
+https://stream2.jlntv.cn/liaoyuan1/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",通化新闻 [Geo-blocked]
+https://stream2.jlntv.cn/tonghua1/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",长春综合 [Geo-blocked]
+https://stream2.jlntv.cn/jlcc/sd/live.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",集安综合 [Geo-blocked]
+https://stream2.jlntv.cn/ja/sd/live.m3u8
