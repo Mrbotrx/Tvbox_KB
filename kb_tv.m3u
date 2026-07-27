@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 295 CHANNELS
+# TOTAL: 306 CHANNELS
 
 #EXTINF:-1 tvg-id="3ABNTVUganda.ug@SD" tvg-logo="https://i.imgur.com/mml9lI2.png" group-title="Religious",3ABN TV Uganda (720p) [Not 24/7]
 https://3abn.bozztv.com/3abn/3abn_uganda_live/index.m3u8
@@ -49,6 +49,8 @@ https://v1.tustreaming.cl/aysentv/index.m3u8
 https://str.yodacdn.net/azertv/index.m3u8
 #EXTINF:-1 tvg-id="BandungTV.id@SD" tvg-logo="https://i.postimg.cc/JzqSzcj9/200px-Logo-bdg-tv-2016.png" group-title="General",Bandung TV (360p)
 http://202.150.153.254:65500/bandungtvWEBSITE.m3u8
+#EXTINF:-1 tvg-id="BIGTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Big_TV.png" group-title="News",BIG TV (720p)
+https://cdn-1.pishow.tv/live/1059/master.m3u8
 #EXTINF:-1 tvg-id="BigTV24x7.in@SD" tvg-logo="https://i.postimg.cc/rpHrRxR5/big_tv_malayalam.png" group-title="News",Big TV 24x7 (576i)
 https://d2gvyg6lvauoko.cloudfront.net/230226/bigtvmalyalam/chunks.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",BizaarTV (720p)
@@ -61,8 +63,14 @@ https://bloomberg.com/media-manifest/streams/asia.m3u8
 https://bloomberg.com/media-manifest/streams/asia-event.m3u8
 #EXTINF:-1 tvg-id="BloombergTV.us@Australia" tvg-logo="https://i.imgur.com/OuogLHx.png" group-title="Business",Bloomberg TV Australia (270p)
 https://bloomberg.com/media-manifest/streams/aus.m3u8
+#EXTINF:-1 tvg-id="BloombergTV.us@EMEALiveEvent" tvg-logo="https://i.imgur.com/OuogLHx.png" group-title="Business",Bloomberg TV EMEA Live Event (720p)
+https://bloomberg.com/media-manifest/streams/eu-event.m3u8
 #EXTINF:-1 tvg-id="BloombergTV.us@Europe" tvg-logo="https://i.imgur.com/OuogLHx.png" group-title="Business",Bloomberg TV Europe (720p)
 https://bloomberg.com/media-manifest/streams/eu.m3u8
+#EXTINF:-1 tvg-id="BloombergTV.us@LiveEvent" tvg-logo="https://i.imgur.com/OuogLHx.png" group-title="Business",Bloomberg TV US Live Event (720p)
+https://bloomberg.com/media-manifest/streams/us-event.m3u8
+#EXTINF:-1 tvg-id="BloombergTV.us@PoliticsLiveEvent" tvg-logo="https://i.imgur.com/OuogLHx.png" group-title="Business",Bloomberg TV US Politics Live Event (720p)
+https://bloomberg.com/media-manifest/streams/politics.m3u8
 #EXTINF:-1 tvg-id="BMGTV.ge@SD" tvg-logo="https://i.imgur.com/vGLkTPA.png" group-title="Business",BMG TV
 https://tv.nucast.tv/lb/ge/bmg/index.m3u8
 #EXTINF:-1 tvg-id="BoonniyomTV.th@SD" tvg-logo="https://i.imgur.com/KvdFCD5.png" group-title="Religious",Boonniyom TV
@@ -161,6 +169,8 @@ https://cloudstreamhntv.tek4tv.vn/capture/smil:HN1.smil/chunklist.m3u8
 https://streamer1.connectto.com/HIGHVISION_WEB_1205/index.m3u8
 #EXTINF:-1 tvg-id="HirTV.hu@SD" tvg-logo="https://i.imgur.com/xmIUDRN.png" group-title="News",Hir TV (1080p)
 https://video11.videa.hu/static/live/8.2966061.2530409.1.5.590.590/index.m3u8
+#EXTINF:-1 tvg-id="HluttawSD.mm@SD" tvg-logo="https://i.imgur.com/Gffq8ks.png" group-title="Legislative",Hluttaw S & D
+https://mrtvott.com/cache/MRTV-HLUTTAW/master.m3u8
 #EXTINF:-1 tvg-id="HopeChannelInterAmerica.us@SD" tvg-logo="https://i.imgur.com/wzvgAch.png" group-title="Religious",Hope Channel Inter-America
 https://jstre.am/live/jsl:EC0Mq0i6HJU.m3u8
 #EXTINF:-1 tvg-id="HopeChannelInternational.us@SD" tvg-logo="https://i.imgur.com/PNihgl2.png" group-title="Religious",Hope Channel International (1080p)
@@ -193,8 +203,6 @@ http://tv1.intv.mk:1935/live/intv/index.m3u8
 https://hls.irannrtv.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="IuniorTV.it@SD" tvg-logo="https://i.imgur.com/FBOJnfT.png" group-title="Kids",Iunior TV (1080p)
 https://5f22d76e220e1.streamlock.net/iuniortv/iuniortv/chunklist_w774879328.m3u8
-#EXTINF:-1 tvg-id="JamunaTV.bd@SD" tvg-logo="https://www.jamuna.tv/wp-content/themes/jtv-news/img/logo.png" group-title="News",Jamuna TV (1080p)
-https://bozztv.com/rongo/rongo-JamunaTelevision/index.m3u8
 #EXTINF:-1 tvg-id="JeevanTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Jeevan_TV.png" group-title="General",Jeevan TV (576p)
 https://cdn-3.pishow.tv/live/1467/master.m3u8
 #EXTINF:-1 tvg-id="JinTV.nl@SD" tvg-logo="https://i.imgur.com/37ajg2j.png" group-title="Culture",Jin TV
@@ -229,6 +237,8 @@ http://118.107.85.5:1935/live/smil:LTV.smil/chunklist.m3u8
 https://lnmlive.com/live/lnmtv.m3u8
 #EXTINF:-1 tvg-id="LiderTV.pe@SD" tvg-logo="https://i.imgur.com/naZXUdR.jpeg" group-title="General",Lider TV (720p)
 https://chankillo.agenciastreaming.com/lidertv/index.m3u8
+#EXTINF:-1 tvg-id="LifevisionTV.us@SD" tvg-logo="" group-title="Religious",LifevisionTV (406p) [Not 24/7]
+https://tgn.bozztv.com/lifevision/lifevision/index.m3u8
 #EXTINF:-1 tvg-id="LLBNTVArabic.us@SD" tvg-logo="https://i.imgur.com/fbrQpC4.png" group-title="Religious",Lighting Lives Blessing Nations TV Arabic (LLBN) (480p)
 https://brightstar-arabic-pull-secure.akamaized.net/brightstararabic/stream.m3u8
 #EXTINF:-1 tvg-id="LLBNTVChinese.us@SD" tvg-logo="https://i.imgur.com/C0jUDMn.png" group-title="Religious",Lighting Lives Blessing Nations TV Chinese (LLBN) (480p)
@@ -263,6 +273,16 @@ https://mntv.livebox.co.in/mntvhls/live.m3u8
 https://bozztv.com/rongo/rongo-MohonaTV/index.m3u8
 #EXTINF:-1 tvg-id="MoonTV.in@SD" tvg-logo="https://i.imgur.com/3l25EZI.png" group-title="News",Moon TV
 https://cdn-4.pishow.tv/live/1121/master.m3u8
+#EXTINF:-1 tvg-id="MRTV.mm@SD" tvg-logo="https://i.imgur.com/uyv7oJH.png" group-title="General",MRTV
+https://mrtvott.com/cache/MRTV-HD/master.m3u8
+#EXTINF:-1 tvg-id="MRTVEntertainment.mm@SD" tvg-logo="https://i.imgur.com/c9q6oT0.png" group-title="Entertainment",MRTV Entertainment
+https://mrtvott.com/cache/MRTV-Ent-HD/master.m3u8
+#EXTINF:-1 tvg-id="MRTVFarmer.mm@SD" tvg-logo="https://i.imgur.com/f4PWvrW.jpg" group-title="Documentary;Lifestyle",MRTV Farmer
+https://mrtvott.com/cache/MRTV-FARMER/master.m3u8
+#EXTINF:-1 tvg-id="MRTVNews.mm@SD" tvg-logo="https://i.imgur.com/5eK8Bc4.png" group-title="News",MRTV News
+https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8
+#EXTINF:-1 tvg-id="MRTVNRC.mm@SD" tvg-logo="https://i.imgur.com/5aLFslk.jpg" group-title="Culture",MRTV NRC
+https://mrtvott.com/cache/MRTV-NRC-HD/master.m3u8
 #EXTINF:-1 tvg-id="Musavision.do@SD" tvg-logo="https://i.imgur.com/wMse6cT.png" group-title="General",Musavision (1080p)
 https://cnn.hostlagarto.com/musavisiontv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="MuslimNetworkTV.us@SD" tvg-logo="" group-title="Religious",Muslim Network TV
@@ -355,8 +375,6 @@ https://lotus.stingray.com/manifest/qello-qello001-montreal/samsungtvplus/master
 https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8
 #EXTINF:-1 tvg-id="RDN.do@SD" tvg-logo="https://i.imgur.com/x02CGSW.png" group-title="News",RDN (1080p) [Not 24/7]
 https://edge.essastream.com/rdntv/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="RedInteriorTV.py@SD" tvg-logo="https://i.imgur.com/z89GLCw.png" group-title="General",Red Interior TV
-https://video.wilohosting.com:19360/redinteriortv/redinteriortv.m3u8
 #EXTINF:-1 tvg-id="RENTV.ru@SD" tvg-logo="https://i.imgur.com/0Tu5lte.png" group-title="General",REN TV (576p)
 http://31.148.48.15/REN-TV/index.m3u8
 #EXTINF:-1 tvg-id="ResurrectionTV.gh@SD" tvg-logo="https://i.imgur.com/IncyJW8.png" group-title="Undefined",Resurrection TV (720p)
@@ -371,6 +389,8 @@ https://streaming.purum.cl/ritoquetv/index.m3u8
 https://rtvelivestream.rtve.es/rtvesec/rne/rne_para_todos_main.m3u8
 #EXTINF:-1 tvg-id="RocavisionTV.do@SD" tvg-logo="https://imgur.com/FkHqqsi.jpg" group-title="General",Rocavision TV [Not 24/7]
 https://streamunoapp.com:3331/live/rocavisiontvlive.m3u8
+#EXTINF:-1 tvg-id="RongeenTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Rongeen_TV.png" group-title="Undefined",Rongeen TV (720p)
+https://server.thelegitpro.in/rongeentv/rongeentv/index.m3u8
 #EXTINF:-1 tvg-id="RTJVA.tg@SD" tvg-logo="https://i.imgur.com/Ja3HVLB.jpg" group-title="Religious",RT JVA (720p) [Not 24/7]
 https://cdn140m.panaccess.com/HLS/RTVJA/index.m3u8
 #EXTINF:-1 tvg-id="RTGTV.ru@SD" tvg-logo="https://i.imgur.com/ZMKPAho.png" group-title="Travel",RTG TV (720p)
@@ -423,6 +443,8 @@ https://media.rtvwesterwolde.nl/hls/live/index.m3u8
 https://stream.rtvze.ba/live/123/123.m3u8
 #EXTINF:-1 tvg-id="RTVC.ci@SD" tvg-logo="https://i.imgur.com/oXuSkHz.png" group-title="Religious",RTVC (720p)
 https://cdn140m.panaccess.com/HLS/RTVC/index.m3u8
+#EXTINF:-1 tvg-id="SaborTV.cl@SD" tvg-logo="https://cdn.m3u.cl/logo/416_Sabor_TV.png" group-title="Music",Sabor TV (720p)
+https://v1.tustreaming.cl/sabortv/index.m3u8
 #EXTINF:-1 tvg-id="SanMarinoRTV.sm@SD" tvg-logo="https://i.imgur.com/ZJSWusT.png" group-title="Undefined",San Marino RTV (720p)
 https://d2hrvno5bw6tg2.cloudfront.net/smrtv-ch01/smil:ch-01.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="SanMarinoRTVSport.sm@SD" tvg-logo="https://i.imgur.com/PGm944g.png" group-title="Sports",San Marino RTV Sport (720p)
