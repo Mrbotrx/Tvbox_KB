@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 312 CHANNELS
+# TOTAL: 309 CHANNELS
 
 #EXTINF:-1 tvg-id="3ABNTVUganda.ug@SD" tvg-logo="https://i.imgur.com/mml9lI2.png" group-title="Religious",3ABN TV Uganda (720p) [Not 24/7]
 https://3abn.bozztv.com/3abn/3abn_uganda_live/index.m3u8
@@ -117,12 +117,8 @@ https://live.obslivestream.com/crtvmux/index.m3u8
 http://145.239.5.177/147/index.m3u8
 #EXTINF:-1 tvg-id="DaNangTV1.vn@SD" tvg-logo="https://i.imgur.com/EOMuO1z.png" group-title="General",Đà Nẵng TV1 (1080p) [Not 24/7]
 https://live.mediatech.vn/live/285b59a111d76974225a8e3004bfc31a509/chunklist.m3u8
-#EXTINF:-1 tvg-id="DaNangTV2.vn@SD" tvg-logo="" group-title="General",Đà Nẵng TV2 (1080p) [Not 24/7]
-https://live.mediatech.vn/live/2859145290d0d7947ef88b6240123b62474/chunklist.m3u8
 #EXTINF:-1 tvg-id="DeshTV.bd@SD" tvg-logo="https://i.imgur.com/ItrZok1.png" group-title="News",Desh TV (1080p)
 https://bozztv.com/rongo/rongo-DeshTV/index.m3u8
-#EXTINF:-1 tvg-id="DienBienTV.vn@SD" tvg-logo="https://i.imgur.com/u308o8q.png" group-title="General",Điện Biên TV (406p)
-https://truyenhinh.vnptvas.vn/live.m3u8?c=vstv362&deviceId=&deviceType=&gcId=1532&location=NA&pkg=pkg11.hni&q=high&requestTime=1586309420781&time=1586395820&token=LX-ibJYRUq9pflRtYAxfYQ&type=tv&userId=
 #EXTINF:-1 tvg-id="DogTV.us@SD" tvg-logo="https://i.imgur.com/dRKis0F.png" group-title="Education;Lifestyle",Dog TV (720p)
 http://206.212.244.63/56/index.m3u8
 #EXTINF:-1 tvg-id="DongNaiTV1.vn@SD" tvg-logo="https://i.imgur.com/oQyioVa.png" group-title="General;News",Đồng Nai 1 (480p) [Not 24/7]
@@ -221,8 +217,6 @@ https://str2.yodacdn.net/kanal35/index.m3u8
 https://ktvhdsg.ekantipur.com:8443/high_quality_85840165/hd/kantipurtv/hd_1080/chunks.m3u8
 #EXTINF:-1 tvg-id="KhabarbinTV.ir@HD" tvg-logo="" group-title="Undefined",Khabarbin TV
 https://khbhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="KoraTV.pe@SD" tvg-logo="https://i.imgur.com/ahBYv4x.png" group-title="Entertainment",Kora TV
-https://s3.tvdatta.com:3700/live/jjrtvlive.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru@SD" tvg-logo="https://smotret.tv/images/kulinar-tv.webp" group-title="Cooking",Kulinar TV (576p)
 https://api.alpaca.t62a.com/hls/9110/stream0.m3u8
 #EXTINF:-1 tvg-id="KVNTV.ru@SD" tvg-logo="https://i.imgur.com/Vw3LFLX.png" group-title="Comedy",KVN TV (576p)
