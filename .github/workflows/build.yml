@@ -1,62 +1,124 @@
-name: Run ZIP IPTV
+name: BDXITV Auto IPTV Build
+
 
 on:
+
   workflow_dispatch:
 
+
+  schedule:
+
+    - cron: "*/30 * * * *"
+
+
 permissions:
+
   contents: write
+
+
 
 jobs:
 
+
   build:
+
 
     runs-on: ubuntu-latest
 
+
     steps:
 
-    - name: Checkout
-      uses: actions/checkout@v4
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
 
-    - name: Install
-      run: |
-        pip install pyzipper requests
+
+      - name: Setup Python
+
+        uses: actions/setup-python@v5
+
+        with:
+
+          python-version: "3.11"
 
 
-    - name: Extract ZIP
-      run: |
 
-        cat > extract.py <<'EOF'
-import pyzipper
+      - name: Install Python Packages
 
-with pyzipper.AESZipFile(
-    "bdxitv.zip",
-    "r"
-) as z:
+        run: |
 
-    z.setpassword(b"KBIPTV")
-    z.extractall()
-
-print("Extract complete")
-EOF
+          pip install pyzipper requests
 
 
-        python extract.py
+
+      - name: Extract Password ZIP
+
+        env:
+
+          ZIP_PASSWORD: ${{ secrets.ZIP_PASSWORD }}
 
 
-    - name: Run Build
-      run: |
-        python build.py
+        run: |
+
+          python <<'PY'
+
+          import pyzipper
+          import os
 
 
-    - name: Save
-      run: |
+          zip_file = "bdxitv.zip"
 
-        git config user.name github-actions[bot]
-        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          password = os.environ["ZIP_PASSWORD"].encode()
 
-        git add vip.m3u8
 
-        git commit -m "Update playlist" || exit 0
 
-        git push
+          with pyzipper.AESZipFile(
+              zip_file,
+              "r"
+          ) as z:
+
+              z.setpassword(password)
+
+              z.extractall(".")
+
+
+
+          print("ZIP Extract Completed")
+
+          PY
+
+
+
+
+      - name: Run IPTV Builder
+
+        run: |
+
+          python build.py
+
+
+
+
+
+      - name: Commit vip.m3u8
+
+
+        run: |
+
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+
+
+          git add vip.m3u8
+
+
+
+          git commit -m "Auto update vip.m3u8" || echo "No changes"
+
+
+
+          git push
