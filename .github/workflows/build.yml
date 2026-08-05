@@ -1,0 +1,62 @@
+name: Run ZIP IPTV
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+
+    - name: Install
+      run: |
+        pip install pyzipper requests
+
+
+    - name: Extract ZIP
+      run: |
+
+        cat > extract.py <<'EOF'
+import pyzipper
+
+with pyzipper.AESZipFile(
+    "bdxitv.zip",
+    "r"
+) as z:
+
+    z.setpassword(b"KBIPTV")
+    z.extractall()
+
+print("Extract complete")
+EOF
+
+
+        python extract.py
+
+
+    - name: Run Build
+      run: |
+        python build.py
+
+
+    - name: Save
+      run: |
+
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+        git add vip.m3u8
+
+        git commit -m "Update playlist" || exit 0
+
+        git push
