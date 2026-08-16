@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 297 CHANNELS
+# TOTAL: 298 CHANNELS
 
 #EXTINF:-1 tvg-id="3ABNTVUganda.ug@SD" tvg-logo="https://i.imgur.com/mml9lI2.png" group-title="Religious",3ABN TV Uganda (720p) [Not 24/7]
 https://3abn.bozztv.com/3abn/3abn_uganda_live/index.m3u8
@@ -399,6 +399,8 @@ https://dy7fxpkq4ggk8.cloudfront.net/nlpo/clr-nlpo/rtv1/index.m3u8
 https://gjirafa-video-live.gjirafa.net/gjvideo-live/2cz-npl-jfn-9he/tracks-v2a1/mono.m3u8
 #EXTINF:-1 tvg-id="RTV38.it@SD" tvg-logo="https://i.imgur.com/YOlwudm.png" group-title="General",RTV38 (576p)
 https://845d8509d2cb4f249dd0b2ae5755b6c2.msvdn.net/rtv38/rtv38_live_main/mainabr/rtv38_live_main/main_576/chunks_dvr.m3u8
+#EXTINF:-1 tvg-id="RTVCanal57.sv@SD" tvg-logo="https://i.imgur.com/tnOGWqL.png" group-title="General",RTV Canal 57 (720p)
+https://stream.giostreaming.app/rtvcanal57/rtvcanal57.m3u8
 #EXTINF:-1 tvg-id="RTVDrenthe.nl@SD" tvg-logo="https://i.imgur.com/UBQCjnG.png" group-title="Undefined",RTV Drenthe (1080p)
 https://cdn.rtvdrenthe.nl/live/rtvdrenthe/tv/index.m3u8
 #EXTINF:-1 tvg-id="RTVHorizon.nl@SD" tvg-logo="https://i.imgur.com/wnRsI8B.png" group-title="Undefined",RTV Horizon (720p)
