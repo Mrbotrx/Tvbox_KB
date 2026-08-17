@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 295 CHANNELS
+# TOTAL: 297 CHANNELS
 
 #EXTINF:-1 tvg-id="3ABNTVUganda.ug@SD" tvg-logo="https://i.imgur.com/mml9lI2.png" group-title="Religious",3ABN TV Uganda (720p) [Not 24/7]
 https://3abn.bozztv.com/3abn/3abn_uganda_live/index.m3u8
@@ -73,6 +73,8 @@ https://bloomberg.com/media-manifest/streams/eu.m3u8
 https://bloomberg.com/media-manifest/streams/us-event.m3u8
 #EXTINF:-1 tvg-id="BloombergTV.us@PoliticsLiveEvent" tvg-logo="https://i.imgur.com/OuogLHx.png" group-title="Business",Bloomberg TV US Politics Live Event (720p)
 https://bloomberg.com/media-manifest/streams/politics.m3u8
+#EXTINF:-1 tvg-id="BMGTV.ge@SD" tvg-logo="https://i.imgur.com/vGLkTPA.png" group-title="Business",BMG TV
+https://tv.nucast.tv/lb/ge/bmg/index.m3u8
 #EXTINF:-1 tvg-id="BoishakhiTV.bd@SD" tvg-logo="https://i.imgur.com/gxL05Y4.png" group-title="General",Boishakhi TV
 https://boishakhi.sonarbanglatv.com/boishakhi/boishakhitv/index.m3u8
 #EXTINF:-1 tvg-id="BoonniyomTV.th@SD" tvg-logo="https://i.imgur.com/KvdFCD5.png" group-title="Religious",Boonniyom TV
@@ -119,6 +121,8 @@ https://live.mediatech.vn/live/285b59a111d76974225a8e3004bfc31a509/chunklist.m3u
 https://live.mediatech.vn/live/2859145290d0d7947ef88b6240123b62474/chunklist.m3u8
 #EXTINF:-1 tvg-id="DogTV.us@SD" tvg-logo="https://i.imgur.com/dRKis0F.png" group-title="Education;Lifestyle",Dog TV (720p)
 http://46.151.196.223:14382
+#EXTINF:-1 tvg-id="DongNaiTV1.vn@SD" tvg-logo="https://i.imgur.com/oQyioVa.png" group-title="General;News",Đồng Nai 1 (480p) [Not 24/7]
+http://118.107.85.4:1935/live/smil:DNTV1.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="TienGiangTV.vn@SD" tvg-logo="https://i.imgur.com/yonKxgZ.png" group-title="Undefined",Đồng Tháp TV2 (540p)
 https://618b88f69e53b.streamlock.net/THDT2/thdttv2/chunklist.m3u8
 #EXTINF:-1 tvg-id="DRTV.dk@SD" tvg-logo="https://i.ibb.co/c6n2vbW/512px-DR-TV-logo-svg.png" group-title="General",DRTV (1080p)
@@ -225,6 +229,8 @@ https://rtvelivestream.rtve.es/rtvesec/la2/la2_main.m3u8
 https://ztnr.rtve.es/ztnr/3987218.m3u8
 #EXTINF:-1 tvg-id="LBFDRTV.cd@SD" tvg-logo="https://i.imgur.com/buMvLJc.jpeg" group-title="Religious",LBFD RTV (1080p)
 https://tnt-television.com/LBFD_RTV/index.m3u8
+#EXTINF:-1 tvg-id="LeNouveauManagerTV.bj@SD" tvg-logo="https://i.imgur.com/pEoOtEf.jpeg" group-title="Business",Le Nouveau Manager TV
+https://lnmlive.com/live/lnmtv.m3u8
 #EXTINF:-1 tvg-id="LiderTV.pe@SD" tvg-logo="https://i.imgur.com/naZXUdR.jpeg" group-title="General",Lider TV (720p)
 https://chankillo.agenciastreaming.com/lidertv/index.m3u8
 #EXTINF:-1 tvg-id="LifevisionTV.us@SD" tvg-logo="" group-title="Religious",LifevisionTV (406p) [Not 24/7]
@@ -473,8 +479,6 @@ https://lotus.stingray.com/manifest/classica-cla008-montreal/samsungtvplus/maste
 https://lotus.stingray.com/manifest/karaoke-kar000-montreal/samsungtvplus/master.m3u8
 #EXTINF:-1 tvg-id="StingrayNaturescape.ca@SD" tvg-logo="https://i.imgur.com/882kd90.png" group-title="Music",Stingray Naturescape (1080p)
 https://lotus.stingray.com/manifest/naturescape-a003-montreal/samsungtvplus/master.m3u8
-#EXTINF:-1 tvg-id="SubinTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/subintvtamil.png" group-title="Entertainment",Subin TV (1080p)
-https://stream.galaxyott.live/live/subintv/index.m3u8
 #EXTINF:-1 tvg-id="SudanTV.sd@SD" tvg-logo="https://i.imgur.com/XUPAYAA.png" group-title="Undefined",Sudan TV (360p)
 https://cdn-globecast.akamaized.net/live/eds/sudan_tv/hls_roku/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",Super TV Brescia (720p)
