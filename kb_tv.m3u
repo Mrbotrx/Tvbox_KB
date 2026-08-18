@@ -197,6 +197,8 @@ http://live.imamhossaintv.com/live/ih6.m3u8
 https://streamingtvi.gestec-video.com/hls/tvixa.m3u8
 #EXTINF:-1 tvg-id="InterTV.ve@SD" tvg-logo="https://i.ibb.co/HG2DM8G/IMG-20230705-153952.jpg" group-title="Entertainment",interTV (1080p)
 https://streamtv.intervenhosting.net:3439/hybrid/play.m3u8
+#EXTINF:-1 tvg-id="INTVAustralia.au@SD" tvg-logo="https://i.imgur.com/1nJl0Pv.png" group-title="Music",INTV Australia (720p)
+http://tv1.intv.mk:1935/live/intv/index.m3u8
 #EXTINF:-1 tvg-id="IranNationalRevolutionTV.us@HD" tvg-logo="" group-title="Undefined",Iran National Revolution TV
 https://hls.irannrtv.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="IuniorTV.it@SD" tvg-logo="https://i.imgur.com/FBOJnfT.png" group-title="Kids",Iunior TV (1080p)
@@ -229,6 +231,8 @@ https://rtvelivestream.rtve.es/rtvesec/la2/la2_main.m3u8
 https://ztnr.rtve.es/ztnr/3987218.m3u8
 #EXTINF:-1 tvg-id="LBFDRTV.cd@SD" tvg-logo="https://i.imgur.com/buMvLJc.jpeg" group-title="Religious",LBFD RTV (1080p)
 https://tnt-television.com/LBFD_RTV/index.m3u8
+#EXTINF:-1 tvg-id="LeNouveauManagerTV.bj@SD" tvg-logo="https://i.imgur.com/pEoOtEf.jpeg" group-title="Business",Le Nouveau Manager TV
+https://lnmlive.com/live/lnmtv.m3u8
 #EXTINF:-1 tvg-id="LiderTV.pe@SD" tvg-logo="https://i.imgur.com/naZXUdR.jpeg" group-title="General",Lider TV (720p)
 https://chankillo.agenciastreaming.com/lidertv/index.m3u8
 #EXTINF:-1 tvg-id="LifevisionTV.us@SD" tvg-logo="" group-title="Religious",LifevisionTV (406p) [Not 24/7]
@@ -343,10 +347,10 @@ http://45.224.97.181:9999/Oromar/index.m3u8
 https://stream.oromar.tv/hls/camriva/index.m3u8
 #EXTINF:-1 tvg-id="OXIRTV.ir@SD" tvg-logo="https://i.imgur.com/MGMhUDx.png" group-title="Entertainment",OXIR TV
 https://hls.oxir.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PalmarTV.do@SD" tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3328-294x165-FFFFFF.jpg" group-title="General",Palmar TV [Not 24/7]
+https://streamunoapp.com:3255/live/palmartvlive.m3u8
 #EXTINF:-1 tvg-id="PamirTV.ca@SD" tvg-logo="https://i.imgur.com/sCBbBOj.png" group-title="Culture;Music",Pamir TV (1080p) [Not 24/7]
 http://live.stream.cdn.pamirtv.com/ptv/d0dbe915091d400bd8ee7f27f0791303.sdp/index.m3u8
-#EXTINF:-1 tvg-id="PannonTV.rs@SD" tvg-logo="https://i.imgur.com/xQa2idL.png" group-title="General",Pannon RTV (648p)
-https://stream.nmih.hu:4102/live.m3u8
 #EXTINF:-1 tvg-id="ParsTV.us@SD" tvg-logo="https://i.imgur.com/RQ5DzEE.png" group-title="General",Pars TV
 https://parshls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="PayameAfghanTV.us@SD" tvg-logo="https://i.imgur.com/t9wYYY9.png" group-title="General",Payam-e-Afghan TV (480p) [Not 24/7]
@@ -463,8 +467,6 @@ http://euvia.cdn.ses-ps.com/HLS-Live/index.m3u8
 http://38.96.178.205/SONYHD/index.m3u8
 #EXTINF:-1 tvg-id="SorTV.md@SD" tvg-logo="https://i.imgur.com/BcfZgD8.png" group-title="General",Sor TV (720p)
 http://188.237.212.16:8888/live/cameraFeed.m3u8
-#EXTINF:-1 tvg-id="SporTV3.br@SD" tvg-logo="https://i.imgur.com/mWOR8pi.png" group-title="Sports",SporTV 3 (720p)
-http://170.83.49.66:8083/SPORTV3HD/index.m3u8
 #EXTINF:-1 tvg-id="StarSports1.in@HD" tvg-logo="https://i.imgur.com/E5jjKHI.png" group-title="Sports",Star Sports 1 HD (1080p)
 http://41.205.93.154/STARSPORTS1/index.m3u8
 #EXTINF:-1 tvg-id="StarSports2Hindi.in@SD" tvg-logo="https://i.imgur.com/kHerF19.png" group-title="Sports",Star Sports 2 Hindi (720p)
@@ -587,8 +589,6 @@ https://stream2.jlntv.cn/sptv/sd/live.m3u8
 https://stream2.jlntv.cn/jlyb/sd/live.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",松原新闻综合 [Geo-blocked]
 https://stream2.jlntv.cn/sytv/sd/live.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",河源综合 (540p)
-https://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",白山新闻综合 [Geo-blocked]
 https://stream2.jlntv.cn/baishan1/sd/live.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Undefined",辽源新闻综合 [Geo-blocked]
