@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 288 CHANNELS
+# TOTAL: 294 CHANNELS
 
 #EXTINF:-1 tvg-id="24Horas.es@SD" tvg-logo="https://i.ibb.co/21sXZ3GT/24h.png" group-title="News;Public",24 Horas (Spain) (720p)
 https://ztnr.rtve.es/ztnr/1694255.m3u8
@@ -13,8 +13,6 @@ https://mediaserver.abnvideos.com/streams/abntvindia.m3u8
 https://restr2.bgtv.bg/agro/hls/agro.m3u8
 #EXTINF:-1 tvg-id="AkhonKolkata.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/ekhonkolkata.png" group-title="News",Akhon Kolkata (478p)
 https://server.playontv.in/ekhonkolkata/ekhonkolkata/index.m3u8
-#EXTINF:-1 tvg-id="AlAlamAlYawm.sa@SD" tvg-logo="https://i.imgur.com/aAGjAoW.png" group-title="News",Al Alam Al Yawm
-https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/chunklist_b928000.m3u8
 #EXTINF:-1 tvg-id="AlJazeera2.qa@HD" tvg-logo="https://i.imgur.com/miq8O1Q.png" group-title="News",Al Jazeera 2 (1080p)
 https://live-hls-web-aja2-gcp.thehlive.com/AJA2/index.m3u8
 #EXTINF:-1 tvg-id="AlJazeera.qa@Arabic" tvg-logo="https://i.imgur.com/7bRVpnu.png" group-title="News",Al Jazeera (1080p)
@@ -85,6 +83,8 @@ https://boishakhi.sonarbanglatv.com/boishakhi/boishakhitv/index.m3u8
 https://live.x2.co.th/live/bntv.m3u8
 #EXTINF:-1 tvg-id="BTNTV.rw@SD" tvg-logo="https://i.imgur.com/WmaP8zP.png" group-title="General",BTN TV (Rwanda)
 https://tv.btnrwanda.com:3973/live/btnv2live.m3u8
+#EXTINF:-1 tvg-id="BugTV.by@SD" tvg-logo="https://i.imgur.com/KqB7YdO.png" group-title="General",Bug-TV (1080p)
+http://46.53.200.153:7777/play/Bug_TV_HD/index.m3u8
 #EXTINF:-1 tvg-id="CanalShowsport.ar@SD" tvg-logo="https://i.imgur.com/0L9tW3Z.png" group-title="Sports",Canal Showsport (720p)
 https://livestream.lumpentv.com.ar/hls/lumpen.m3u8
 #EXTINF:-1 tvg-id="CaoBangTV.vn@SD" tvg-logo="https://i.imgur.com/dGonewm.png" group-title="General",Cao Bang TV (720p)
@@ -225,8 +225,6 @@ https://player.smotrim.ru/iframe/stream/live_id/3e95d201-f87d-4ac1-8897-db2c66bb
 https://chankillo.agenciastreaming.com/lidertv/index.m3u8
 #EXTINF:-1 tvg-id="LifevisionTV.us@SD" tvg-logo="" group-title="Religious",LifevisionTV (406p) [Not 24/7]
 https://tgn.bozztv.com/lifevision/lifevision/index.m3u8
-#EXTINF:-1 tvg-id="LingkarTV.id@SD" tvg-logo="https://lingkartv.com/assets/img/logo-square.png" group-title="Music;News;Religious",Lingkar TV
-https://lingkartv.my.id/hls/lingkartv.m3u8
 #EXTINF:-1 tvg-id="LLBNTVArabic.us@SD" tvg-logo="https://i.imgur.com/fbrQpC4.png" group-title="Religious",LLBN TV Arabic (480p)
 https://brightstar-arabic-pull-secure.akamaized.net/brightstararabic/stream.m3u8
 #EXTINF:-1 tvg-id="LLBNTVChinese.us@SD" tvg-logo="https://i.imgur.com/C0jUDMn.png" group-title="Religious",LLBN TV Chinese (480p)
@@ -437,8 +435,6 @@ https://watch.sardius.media/channels/Ea867F3e1F56B06/site_c5402f016A/live.m3u8
 https://watch.sardius.media/channels/Ea867F3e1F56B06/site_8D363D13Eb/live.m3u8
 #EXTINF:-1 tvg-id="SBNTVInternational.us@SD" tvg-logo="https://i.imgur.com/NJu6oYB.png" group-title="Religious",SBN TV International (720p)
 https://watch.sardius.media/channels/Ea867F3e1F56B06/site_09a4778E89/live.m3u8
-#EXTINF:-1 tvg-id="ScientologyNetwork.us@KSCNTV" tvg-logo="https://i.imgur.com/HOYF8NA.png" group-title="Undefined",Scientology Network KSCN-TV
-https://stream-losangeles.scientology.org/master.m3u8
 #EXTINF:-1 tvg-id="ShamsTV.af@SD" tvg-logo="https://i.imgur.com/Lsy31iZ.jpeg" group-title="Education",Shams TV (Afghanistan)
 https://fflive-darya-educationtv.b-cdn.net/master.m3u8
 #EXTINF:-1 tvg-id="ShansonTV.ru@SD" tvg-logo="https://i.imgur.com/Fk4sd8t.png" group-title="Music",Shanson TV (576p)
@@ -449,18 +445,30 @@ https://cdnbarinas.tvzamora.com/showven/index.m3u8
 http://sivantv.livebox.co.in/sivantvhls/sivan.m3u8
 #EXTINF:-1 tvg-id="SonnenklarTV.de@SD" tvg-logo="https://i.imgur.com/g4QeXwF.png" group-title="Undefined",Sonnenklar TV (1080p)
 http://euvia.cdn.ses-ps.com/HLS-Live/index.m3u8
+#EXTINF:-1 tvg-id="SonyBBCEarth.in@HD" tvg-logo="https://dtil.tmsimg.com/assets/s143800_ld_h15_aa.png?lock=720x540" group-title="Documentary",Sony BBC Earth HD (1080p)
+http://103.185.24.134:3001/SONY-BBC/index.m3u8
+#EXTINF:-1 tvg-id="SonyEntertainmentTelevision.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/s157589_ld_h15_aa.png?lock=720x540" group-title="Entertainment",Sony Entertainment Television (576p)
+http://103.151.60.162:2122/play/a015/index.m3u8?hls
 #EXTINF:-1 tvg-id="SonyEntertainmentTelevision.in@HD" tvg-logo="https://dtil.tmsimg.com/assets/s159096_ld_h15_aa.png?lock=720x540" group-title="Entertainment",Sony Entertainment Television HD (1080p)
 http://38.96.178.205/SONYHD/index.m3u8
+#EXTINF:-1 tvg-id="SonySAB.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/s159099_ld_h15_ab.png?lock=720x540" group-title="Entertainment",Sony SAB (576p)
+http://103.151.60.162:2122/play/a01q/index.m3u8?hls
 #EXTINF:-1 tvg-id="SorTV.md@SD" tvg-logo="https://i.imgur.com/BcfZgD8.png" group-title="General",Sor TV (720p)
 http://188.237.212.16:8888/live/cameraFeed.m3u8
+#EXTINF:-1 tvg-id="SporTV2.br@SD" tvg-logo="https://i.imgur.com/pBiUnb2.png" group-title="Sports",SporTV 2 (1080p)
+http://195.178.110.110/sportv2/index.m3u8
+#EXTINF:-1 tvg-id="SporTV3.br@SD" tvg-logo="https://i.imgur.com/mWOR8pi.png" group-title="Sports",SporTV 3 (1080p)
+http://195.178.110.110/sportv3/index.m3u8
 #EXTINF:-1 tvg-id="SporTV.br@SD" tvg-logo="https://i.postimg.cc/gr9x3z71/Spor-TV-2021.png" group-title="Sports",SporTV (1080p)
 http://195.178.110.110/sportv/index.m3u8
 #EXTINF:-1 tvg-id="StarSports1.in@SD" tvg-logo="https://i.imgur.com/E5jjKHI.png" group-title="Sports",Star Sports 1 (576p)
 http://51.75.127.199:3141/starsports1/index.m3u8
 #EXTINF:-1 tvg-id="StarSports2Telugu.in@HD" tvg-logo="https://i.imgur.com/m7DvvqF.png" group-title="Sports",Star Sports 2 Telugu HD (576p)
 https://real-vk.proxy.nellaiiptv.com/SDMEDIA/index.m3u8
-#EXTINF:-1 tvg-id="StarSportsSelect2.in@HD" tvg-logo="https://i.imgur.com/FtRT73R.png" group-title="Sports",Star Sports Select 2 HD (720p)
-http://tvsen7.aynascope.net/ssport2hd/index.m3u8
+#EXTINF:-1 tvg-id="StarSportsSelect1.in@HD" tvg-logo="https://i.imgur.com/Mh9tKPx.png" group-title="Sports",Star Sports Select 1 HD (1080p)
+http://103.151.60.162:2122/play/a026/index.m3u8?hls
+#EXTINF:-1 tvg-id="StarSportsSelect2.in@HD" tvg-logo="https://i.imgur.com/FtRT73R.png" group-title="Sports",Star Sports Select 2 HD (1080p)
+http://103.151.60.162:2122/play/a027/index.m3u8?hls
 #EXTINF:-1 tvg-id="StarTV.tr@SD" tvg-logo="https://i.imgur.com/9O3DHRB.png" group-title="Undefined",Star TV (Turkiye) (720p)
 https://dogus.daioncdn.net/startv/startv_720p.m3u8?app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3&sid=8l4w3lst4co5
 #EXTINF:-1 tvg-id="StingrayClassica.ca@SD" tvg-logo="https://i.imgur.com/nh1k5RC.png" group-title="Music",Stingray Classica (1080p)
@@ -473,6 +481,8 @@ https://lotus.stingray.com/manifest/naturescape-a003-montreal/samsungtvplus/mast
 https://stream.galaxyott.live/live/subintv/index.m3u8
 #EXTINF:-1 tvg-id="SudanTV.sd@SD" tvg-logo="https://i.imgur.com/XUPAYAA.png" group-title="Undefined",Sudan TV (360p)
 https://cdn-globecast.akamaized.net/live/eds/sudan_tv/hls_roku/index.m3u8
+#EXTINF:-1 tvg-id="SunTV.in@HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0M0Y.png?lock=720x540" group-title="Entertainment",Sun TV HD (1080p)
+http://103.151.60.162:2122/play/a02a/index.m3u8?hls
 #EXTINF:-1 tvg-id="SuperTV.ba@SD" tvg-logo="https://i.imgur.com/XYWgd3E.png" group-title="General",Super TV (Bosnia and Herzegovina) (720p)
 https://mirtv.club/live/mirtv/index.m3u8
 #EXTINF:-1 tvg-id="SupremeMasterTV.tw@SD" tvg-logo="https://i.imgur.com/kFMHayP.png" group-title="Undefined",Supreme Master TV (720p)
@@ -511,6 +521,8 @@ https://fs.uplink.kz/turan_tv/mono.m3u8?token=onlinetv
 https://server.livelegitpro.in/bnews24/bnews24/video.m3u8
 #EXTINF:-1 tvg-id="TVNiksic.me@SD" tvg-logo="https://i.imgur.com/51fGwzn.png" group-title="Undefined",TV Niksic (720p)
 https://tv.rtv-niksic.me/hls/stream.m3u8
+#EXTINF:-1 tvg-id="TVEInternacionalAmerica.es@SD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="Undefined",TVE Internacional America (576p) [Geo-blocked]
+https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_ame_main_576.m3u8
 #EXTINF:-1 tvg-id="TVEInternacionalAmerica.es@HD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="Undefined",TVE Internacional America HD (1080p) [Geo-blocked]
 https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_ame_main_1080.m3u8
 #EXTINF:-1 tvg-id="TVEInternacionalAsiaOceania.es@HD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="Undefined",TVE Internacional Asia-Oceania HD (1080p) [Geo-blocked]
