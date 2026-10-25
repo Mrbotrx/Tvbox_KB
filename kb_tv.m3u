@@ -47,8 +47,6 @@ https://api-tv.ipnet.ua/api/v1/manifest/2118742632.m3u8
 https://arvhls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="AsianDrama.hk@SD" tvg-logo="https://i.imgur.com/wqtN7mH.png" group-title="Entertainment",Asian Drama (1080p)
 http://103.172.187.30:12000/stream/mytv/null-11/master.m3u8
-#EXTINF:-1 tvg-id="ATNBangla.bd@SD" tvg-logo="https://i.imgur.com/K1HmMRz.png" group-title="General",ATN Bangla (720p)
-http://tvsen5.aynascope.net/atnbangla/index.m3u8
 #EXTINF:-1 tvg-id="AvangTV.us@SD" tvg-logo="https://i.imgur.com/3I1n7fO.png" group-title="Music",Avang TV (1080p)
 https://hls.avang.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="AwakeningTV.in@SD" tvg-logo="https://i.imgur.com/p26iWOi.png" group-title="Religious",Awakening TV (576p)
@@ -101,6 +99,8 @@ http://player.cetelmon.tv/protecteddfd43c2f3a8b41f3f28582bf8993aca6/992_high.m3u
 https://d3e05csss9c272.cloudfront.net/out/v1/f0bf71c57581470fb9379f603e8f5d83/CGNWebLiveCN.m3u8
 #EXTINF:-1 tvg-id="CGTNDocumentary.cn@SD" tvg-logo="https://i.imgur.com/JHv0WxM.png" group-title="Documentary",CGTN Documentary (1080p)
 https://amg00405-rakutentv-cgtndocumentary-rakuten-0ql8j.amagi.tv/master.m3u8
+#EXTINF:-1 tvg-id="ChampionTV.ci@SD" tvg-logo="https://i.imgur.com/WjHSrHN.png" group-title="Business",Champion TV
+https://stream.berosat.live/hls/champion-tv/champion-tv.m3u8
 #EXTINF:-1 tvg-id="ClaroVisionTV.do@SD" tvg-logo="https://i.imgur.com/MpTgJMJ.png" group-title="Entertainment",Claro Vision TV (720p)
 https://streamunoapp.com:3057/live/clarovisiontvlive.m3u8
 #EXTINF:-1 tvg-id="CodeFashionTV.bg@SD" tvg-logo="https://i.imgur.com/mVc2g64.png" group-title="Lifestyle",Code Fashion TV (1080p)
@@ -147,8 +147,6 @@ https://streaming.aurora.enhanced.live/live/mpc/enl0eG1mLmVncmVzcy5mZDJ2eHI=/out
 http://38.134.250.110:8000/play/a01y/index.m3u8
 #EXTINF:-1 tvg-id="DiscoveryWorld.us@LatinAmerica" tvg-logo="https://i.imgur.com/yNFmUkE.png" group-title="Entertainment",Discovery World (1080p)
 http://168.196.127.137:6001/play/a097/index.m3u8
-#EXTINF:-1 tvg-id="DragonTVInternational.cn@SD" tvg-logo="https://i.imgur.com/WqM6xnF.png" group-title="General",Dragon TV International
-https://restream.pdtvhd.com/memfs/0b1b95c9-3543-4af9-9fdb-cf45f1602f17.m3u8
 #EXTINF:-1 tvg-id="DRTV.dk@SD" tvg-logo="https://i.ibb.co/c6n2vbW/512px-DR-TV-logo-svg.png" group-title="General",DRTV (1080p)
 https://drlivedrtvahls.akamaized.net/hls/live/2113613/drlivedrtva/master.m3u8
 #EXTINF:-1 tvg-id="DRTVInternational.cg@SD" tvg-logo="https://i.imgur.com/rGbTvtZ.png" group-title="General",DRTV International
@@ -235,8 +233,8 @@ https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8
 https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8
 #EXTINF:-1 tvg-id="KantipurTV.np@HD" tvg-logo="https://i.imgur.com/HEVo2Gc.png" group-title="General",Kantipur TV
 https://ktvhdsg.ekantipur.com:8443/high_quality_85840165/hd/kantipurtv/hd_1080/chunks.m3u8
-#EXTINF:-1 tvg-id="KoraTV.pe@SD" tvg-logo="https://i.imgur.com/ahBYv4x.png" group-title="Entertainment",Kora TV
-https://s3.tvdatta.com:3700/live/jjrtvlive.m3u8
+#EXTINF:-1 tvg-id="KonTumTV.vn@SD" tvg-logo="https://i.imgur.com/lLlu6ZA.png" group-title="General",Kon Tum TV (720p) [Geo-blocked]
+https://247.dpdns.org/module/IPTV/?id=QNgTV2&accKenh=vuminhthanh1
 #EXTINF:-1 tvg-id="KulinarTV.ru@SD" tvg-logo="https://smotret.tv/images/kulinar-tv.webp" group-title="Cooking",Kulinar TV (576p)
 https://api.alpaca.t62a.com/hls/9110/stream0.m3u8
 #EXTINF:-1 tvg-id="KVNTV.ru@SD" tvg-logo="https://i.imgur.com/Vw3LFLX.png" group-title="Comedy",KVN TV (576p)
@@ -537,6 +535,8 @@ https://streaming.thainguyentv.vn/hls/livestream.m3u8
 https://618b88f69e53b.streamlock.net/THDT2/thdttv2/chunklist.m3u8
 #EXTINF:-1 tvg-id="TOLOnews.af@SD" tvg-logo="https://i.imgur.com/oxaHaTq.png" group-title="News",TOLOnews (720p)
 https://tgn.bozztv.com/eshgtv-dvrfl05/gin-tolonews/index.m3u8
+#EXTINF:-1 tvg-id="TownTV.kh@SD" tvg-logo="https://i.imgur.com/9fUGvVG.png" group-title="Undefined",Town TV
+https://stream.pdtvhd.com/LiveApp/streams/Townfullhd.m3u8
 #EXTINF:-1 tvg-id="TropicalMoonUrbanTV.pa@SD" tvg-logo="https://i.imgur.com/WcM7BP5.png" group-title="Music",Tropical Moon Urban TV [Not 24/7]
 https://sistemastr.tropicalmoonmedia.com:443/live/D8E123ACA054EF85B153C354A481A406/4.m3u8
 #EXTINF:-1 tvg-id="TV45.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/TV45.png" group-title="News",TV45 (1080p)
@@ -575,6 +575,8 @@ https://hlspackager.akamaized.net/live/DB/WAAR_HD/HLS/WAAR_HD.m3u8
 http://vg-zeefta.akamaized.net/ptnr-yupptv/title-wion/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/20c3c0d9-0256-43fe-bca6-70fdd490b957/main.m3u8
 #EXTINF:-1 tvg-id="WorldChannel.us@WGTV" tvg-logo="https://worldchannel.org/static/images/logo-world-channel.png" group-title="Education",World Channel WGTV (1080p)
 https://wgtvdt3.lls.pbs.org/wgtvdt3-cmaf-hls.m3u8
+#EXTINF:-1 tvg-id="WWONTVChannel48.us@SD" tvg-logo="https://i.imgur.com/l4qHAq6.png" group-title="Entertainment",WWON-TV Channel 48
+https://tv2.fastcast4u.com:3943/stream/play.m3u8
 #EXTINF:-1 tvg-id="XinjiangTV2.cn@SD" tvg-logo="https://i.imgur.com/GXFLqxx.png" group-title="Undefined",Xinjiang TV 2
 http://110.153.180.106:55555/out_3/index.m3u8
 #EXTINF:-1 tvg-id="XinjiangTV3.cn@SD" tvg-logo="https://i.imgur.com/l8S5qQB.png" group-title="Undefined",Xinjiang TV 3
@@ -585,8 +587,6 @@ http://120.70.60.179:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
 http://120.70.60.179:9901/tsfile/live/1002_1.m3u8?authid=0&key=txiptv&playlive=1
 #EXTINF:-1 tvg-id="XizangTVTibetan.cn@SD" tvg-logo="https://i.imgur.com/NtvfnVV.png" group-title="Undefined",Xizang TV Tibetan (720p) [Not 24/7]
 http://php.jdshipin.com:8880/xztv.php?id=zy
-#EXTINF:-1 tvg-id="XperTV.cr@SD" tvg-logo="https://i.imgur.com/0Aftiln.png" group-title="Entertainment",XperTV (1080p)
-http://45.163.139.42:8000/play/a02x/index.m3u8
 #EXTINF:-1 tvg-id="YachtingTV.cz@SD" tvg-logo="https://i.imgur.com/YxO60B1.png" group-title="Lifestyle",Yachting TV (1080p)
 https://streams2.sofast.tv/vglive-sk-461164/index.m3u8
 #EXTINF:-1 tvg-id="ZarinTV.us@SD" tvg-logo="" group-title="General",Zarin TV (1080p)
