@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 296 CHANNELS
+# TOTAL: 290 CHANNELS
 
 #EXTINF:-1 tvg-id="24Horas.es@SD" tvg-logo="https://i.ibb.co/21sXZ3GT/24h.png" group-title="News;Public",24 Horas (720p)
 https://ztnr.rtve.es/ztnr/1694255.m3u8
@@ -39,8 +39,6 @@ https://jmc-live.ercdn.net/altaghier/altaghier.m3u8
 https://ammantv-live.ercdn.net/ammantvhd/ammantvhd.m3u8
 #EXTINF:-1 tvg-id="AnimalPlanet.bg@SD" tvg-logo="https://i.postimg.cc/pd0kmDgK/Animal-Planet-Logo-PNG12.png" group-title="Undefined",Animal Planet (Bulgaria)
 http://213.91.179.28:8000/play/a05r
-#EXTINF:-1 tvg-id="ANTV.ve@SD" tvg-logo="https://i.imgur.com/Qm88HT0.png" group-title="Legislative",ANTV (Venezuela) (720p)
-http://181.78.8.199:8000/play/a0fo/index.m3u8
 #EXTINF:-1 tvg-id="ArmyTV.ua@SD" tvg-logo="https://i.imgur.com/pGByjbh.png" group-title="News",Army TV (1080p)
 https://api-tv.ipnet.ua/api/v1/manifest/2118742632.m3u8
 #EXTINF:-1 tvg-id="ArvanTV.ir@SD" tvg-logo="" group-title="Undefined",Arvan TV
@@ -151,16 +149,14 @@ http://stream.mcquack.net/288/index.m3u8
 http://stream.mcquack.net/287/index.m3u8
 #EXTINF:-1 tvg-id="FashionTVParisLOriginal.fr@SD" tvg-logo="https://i.imgur.com/GFTAN5Q.png" group-title="Lifestyle",FashionTV Paris L'Original (1080p)
 https://edge-fast3.evrideo.tv/bfdbb576-83f7-11f0-9f89-0200170e3e04_1000028043_HLS/manifest.m3u8
+#EXTINF:-1 tvg-id="FGTV.us@SD" tvg-logo="https://i.imgur.com/RXFmzVY.png" group-title="Legislative",FGTV (United States)
+https://securestream11.champds.com/LIVE/FultonCoGALIVE/FultonCoGALIVE.m3u8
 #EXTINF:-1 tvg-id="FolkKlubTV.au@SD" tvg-logo="https://i.imgur.com/Seq7Od7.png" group-title="Music",Folk Klub TV (720p)
 http://tv1.intv.mk:1935/live2/folkklub/index.m3u8
 #EXTINF:-1 tvg-id="FriendsTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Friends_TV.png" group-title="Entertainment",Friends TV (1080p)
 https://server.playontv.in/friendstv/index.m3u8
 #EXTINF:-1 tvg-id="FUSIONTV.mq@SD" tvg-logo="https://i.imgur.com/WMrYEgH.png" group-title="Music",FUSION TV (1080p)
 https://edge20.vedge.infomaniak.com/livecast/ik:fusiontv/manifest.m3u8
-#EXTINF:-1 tvg-id="GangaurTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Gangaur.png" group-title="Entertainment",Gangaur TV (1080p)
-https://pbgangaur.wiseplayout.com/Gangaur/master.m3u8
-#EXTINF:-1 tvg-id="GlendaleTV.us@SD" tvg-logo="https://i.imgur.com/akbtQ33.png" group-title="Legislative",Glendale TV (720p) [Geo-blocked]
-https://reflect-gtv6-glendale.cablecast.tv/live-2/live/live.m3u8
 #EXTINF:-1 tvg-id="GNNTV.jm@SD" tvg-logo="https://i.imgur.com/itetPKw.png" group-title="Religious",GNN TV (1080p)
 https://na.linear.zype.com/bf94f9f4-383c-40e0-9d49-279a4f33ab8d/f29b8836-d990-4c8d-b421-192a8f43edc4-zype/live.m3u8
 #EXTINF:-1 tvg-id="GuangdongTVAmerica.us@SD" tvg-logo="https://i.imgur.com/7J4qGjA.png" group-title="General",Guangdong TV America
@@ -219,8 +215,6 @@ https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8
 https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8
 #EXTINF:-1 tvg-id="KantipurTV.np@HD" tvg-logo="https://i.imgur.com/HEVo2Gc.png" group-title="General",Kantipur TV
 https://ktvhdsg.ekantipur.com:8443/high_quality_85840165/hd/kantipurtv/hd_1080/chunks.m3u8
-#EXTINF:-1 tvg-id="KFONTV.us@SD" tvg-logo="https://i.imgur.com/MQHYm3V.png" group-title="General",KFON TV (720p) [Geo-blocked]
-https://reflect-watchkfon-fontana.cablecast.tv/live-3/live/live.m3u8
 #EXTINF:-1 tvg-id="KoraTV.pe@SD" tvg-logo="https://i.imgur.com/ahBYv4x.png" group-title="Entertainment",Kora TV
 https://s3.tvdatta.com:3700/live/jjrtvlive.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru@SD" tvg-logo="https://smotret.tv/images/kulinar-tv.webp" group-title="Cooking",Kulinar TV (576p)
@@ -271,12 +265,8 @@ http://team-tv.co:81/milan/index.m3u8
 https://cdn.pishow.tv/ott/live/1121/master.m3u8
 #EXTINF:-1 tvg-id="MRTV.mm@SD" tvg-logo="https://i.imgur.com/uyv7oJH.png" group-title="General",MRTV
 https://mrtvott.com/cache/MRTV-HD/master.m3u8
-#EXTINF:-1 tvg-id="MRTVEntertainment.mm@SD" tvg-logo="https://i.imgur.com/c9q6oT0.png" group-title="Entertainment",MRTV Entertainment
-https://mrtvott.com/cache/MRTV-Ent-HD/master.m3u8
 #EXTINF:-1 tvg-id="MRTVFarmer.mm@SD" tvg-logo="https://i.imgur.com/f4PWvrW.jpg" group-title="Documentary;Lifestyle",MRTV Farmer
 https://mrtvott.com/cache/MRTV-FARMER/master.m3u8
-#EXTINF:-1 tvg-id="MRTVNews.mm@SD" tvg-logo="https://i.imgur.com/5eK8Bc4.png" group-title="News",MRTV News
-https://mrtvott.com/cache/MRTV-NEWS-HD/master.m3u8
 #EXTINF:-1 tvg-id="MRTVNRC.mm@SD" tvg-logo="https://i.imgur.com/5aLFslk.jpg" group-title="Culture",MRTV NRC
 https://mrtvott.com/cache/MRTV-NRC-HD/master.m3u8
 #EXTINF:-1 tvg-id="MRTVSports.mm@SD" tvg-logo="https://i.imgur.com/cFTR4kC.png" group-title="Sports",MRTV Sports [Not 24/7]
@@ -393,8 +383,6 @@ http://31.148.5.241/kanal_11/index.m3u8
 http://178.134.1.158:8081/RENTV/index.m3u8
 #EXTINF:-1 tvg-id="ReporterTV.in@SD" tvg-logo="https://dtil.tmsimg.com/assets/s85096_ld_h15_aa.png?lock=720x540" group-title="News",Reporter TV (576p)
 https://cdn.pishow.tv/ott/live/1510/master.m3u8
-#EXTINF:-1 tvg-id="ResurrectionTV.gh@SD" tvg-logo="https://i.imgur.com/IncyJW8.png" group-title="Undefined",Resurrection TV (720p)
-https://1681360479.rsc.cdn77.org/1681360479/index.m3u8
 #EXTINF:-1 tvg-id="RetroTV.us@East" tvg-logo="https://i.imgur.com/iUTL0pm.png" group-title="Classic",Retro TV (720p) [Geo-blocked]
 https://freecast-lukentvlive.vgcdn.net/out/v1/665e9f91614b43b0a0654e9317f1d9f3/index.m3u8
 #EXTINF:-1 tvg-id="REVNAction.us@SD" tvg-logo="https://i.imgur.com/xsm8mMd.png" group-title="Auto;Outdoor;Series;Sports",REV'N Action (720p) [Geo-blocked]
@@ -431,6 +419,8 @@ https://d2eanln3bsfb0d.cloudfront.net/nlpo/clr-nlpo/rtvmeppel/index.m3u8
 https://media.rtvnoord.nl/live/rtvnoord/tv/index.m3u8
 #EXTINF:-1 tvg-id="RTVNoordExtra.nl@SD" tvg-logo="https://i.imgur.com/T0UvltB.png" group-title="Undefined",RTV Noord Extra (1080p) [Not 24/7]
 https://media.rtvnoord.nl/live/rtvnoord/extra/index.m3u8
+#EXTINF:-1 tvg-id="RTVNoviPazar.rs@SD" tvg-logo="https://i.imgur.com/NpyRVyC.png" group-title="Undefined",RTV Novi Pazar
+https://tv.rtvnp.rs/stream.m3u8
 #EXTINF:-1 tvg-id="RTVOost.nl@SD" tvg-logo="https://i.imgur.com/nTR6q9H.png" group-title="Undefined",RTV Oost (720p)
 https://d34cg2bnc08ruf.cloudfront.net/live/rtvoost/tv/index.m3u8
 #EXTINF:-1 tvg-id="RTVPendimi.ch@SD" tvg-logo="https://i.ibb.co/tD48GMD/RTV-Pendimi.png" group-title="Religious",RTV Pendimi (720p)
@@ -527,8 +517,6 @@ http://62.60.207.173:8080/hls/thaqalayn/index.m3u8
 https://618b88f69e53b.streamlock.net/THDT2/thdttv2/chunklist.m3u8
 #EXTINF:-1 tvg-id="TOLOnews.af@SD" tvg-logo="https://i.imgur.com/oxaHaTq.png" group-title="News",TOLOnews (720p)
 https://tgn.bozztv.com/eshgtv-dvrfl05/gin-tolonews/index.m3u8
-#EXTINF:-1 tvg-id="TownTV.kh@SD" tvg-logo="https://i.imgur.com/9fUGvVG.png" group-title="Undefined",Town TV
-https://stream.pdtvhd.com/LiveApp/streams/Townfullhd.m3u8
 #EXTINF:-1 tvg-id="TropicalMoonUrbanTV.pa@SD" tvg-logo="https://i.imgur.com/WcM7BP5.png" group-title="Music",Tropical Moon Urban TV [Not 24/7]
 https://sistemastr.tropicalmoonmedia.com/live/D8E123ACA054EF85B153C354A481A406/4.m3u8
 #EXTINF:-1 tvg-id="TV45.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/TV45.png" group-title="News",TV45 (1080p)
