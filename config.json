@@ -1,0 +1,19 @@
+{
+  "source_urls": [
+    "https://ashtv.com.bd/"
+  ],
+  "max_pages": 10,
+  "max_workers": 5,
+  "output": "playlist.m3u",
+  "categories": {
+    "Bangla": ["bangla", "bd", "bangladesh"],
+    "Sports": ["sports", "cricket", "football"],
+    "News": ["news", "bbc", "cnn"],
+    "Movies": ["movie", "cinema", "film"],
+    "Music": ["music", "song"],
+    "Kids": ["kids", "cartoon"],
+    "Hindi": ["hindi", "india"],
+    "English": ["english"],
+    "Others": []
+  }
+}
