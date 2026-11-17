@@ -1,318 +1,244 @@
-import json
+import os
 import re
+import sys
+import logging
 import requests
 
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
-from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor
-from bs4 import BeautifulSoup
+from html import unescape
 
+# ==========================================
+# CONFIGURATION
+# ==========================================
 
-BASE_DIR = Path(__file__).resolve().parent
+WEBSITE_URL = "https://ashtv.com.bd/"
 
-CONFIG_FILE = BASE_DIR / "config.json"
+OUTPUT_FILE = Path("public/ash-tv.m3u")
 
+TIMEOUT = 25
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0"
+    "User-Agent": (
+        "Mozilla/5.0 (Linux; Android 13) "
+        "AppleWebKit/537.36 Chrome/120.0.0.0 "
+        "Mobile Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml"
 }
 
+# ==========================================
+# LOGGING
+# ==========================================
 
-def load_config():
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(message)s"
+)
 
-    with open(CONFIG_FILE, encoding="utf-8") as f:
-        return json.load(f)
+# ==========================================
+# FETCH PUBLIC HTML
+# ==========================================
 
+def fetch_website():
 
-def fetch(url):
+    print(f"[WEBSITE] {WEBSITE_URL}")
+    print(f"[SCANNING] {WEBSITE_URL}")
 
     try:
 
         response = requests.get(
-            url,
+            WEBSITE_URL,
             headers=HEADERS,
-            timeout=15
+            timeout=TIMEOUT
         )
 
         response.raise_for_status()
+
+        if "text/html" not in response.headers.get(
+            "Content-Type", ""
+        ).lower():
+
+            print("[WARNING] Response is not HTML")
+            return None
 
         return response.text
 
     except requests.RequestException as error:
 
-        print("[ERROR]", error)
+        print(f"[ERROR] Website request failed: {error}")
 
         return None
 
 
-def extract_links(html, base):
+# ==========================================
+# FIND PUBLIC M3U8 LINKS
+# ==========================================
 
-    soup = BeautifulSoup(html, "html.parser")
+def extract_public_streams(html):
 
-    results = {}
+    if not html:
+        return []
 
-    for tag in soup.find_all(["a", "video", "source"]):
+    html = unescape(html)
 
-        link = tag.get("href") or tag.get("src")
+    patterns = [
 
-        if not link:
-            continue
+        r"""["']([^"'<>]+\.m3u8(?:\?[^"'<>]*)?)["']""",
 
-        if ".m3u8" not in link.lower():
-            continue
+        r"""(?:src|href)\s*=\s*["']([^"']+\.m3u8(?:\?[^"']*)?)["']""",
 
-        link = urljoin(base, link)
+    ]
 
-        name = (
-            tag.get("title")
-            or tag.get("aria-label")
-            or tag.get_text(strip=True)
-            or "Unknown Channel"
+    found = set()
+
+    for pattern in patterns:
+
+        matches = re.findall(
+            pattern,
+            html,
+            re.IGNORECASE
         )
 
-        results[link] = name
+        for match in matches:
 
-    pattern = (
-        r'https?://[^\s"\'<>]+\.m3u8'
-        r'(?:\?[^\s"\'<>]*)?'
-    )
+            url = urljoin(WEBSITE_URL, match.strip())
 
-    for link in re.findall(pattern, html, re.I):
+            parsed = urlparse(url)
 
-        link = link.rstrip("),;")
+            if parsed.scheme not in ("http", "https"):
+                continue
 
-        results.setdefault(
-            link,
-            "Unknown Channel"
+            if not parsed.path.lower().endswith(".m3u8"):
+                continue
+
+            found.add(url)
+
+    return sorted(found)
+
+
+# ==========================================
+# BUILD M3U PLAYLIST
+# ==========================================
+
+def build_playlist(streams):
+
+    lines = ["#EXTM3U"]
+
+    for index, stream in enumerate(streams, start=1):
+
+        name = f"ASH TV Channel {index}"
+
+        lines.append(
+            f'#EXTINF:-1 tvg-name="{name}" '
+            f'group-title="ASH TV",{name}'
         )
 
-    return results
+        lines.append(stream)
+
+    return "\n".join(lines) + "\n"
 
 
-def scan_website(start_url, max_pages):
+# ==========================================
+# SAFE FILE UPDATE
+# ==========================================
 
-    domain = urlparse(start_url).netloc
+def save_playlist(streams):
 
-    visited = set()
+    # IMPORTANT:
+    # Never overwrite an existing playlist
+    # when no new streams are discovered.
 
-    pending = [start_url]
+    if not streams:
 
-    channels = {}
+        print("[FOUND] 0")
 
-    while pending and len(visited) < max_pages:
+        if OUTPUT_FILE.exists():
 
-        url = pending.pop(0)
+            print("[KEEP] Previous playlist preserved.")
 
-        if url in visited:
-            continue
+        else:
 
-        visited.add(url)
+            print("[INFO] No previous playlist exists.")
 
-        print("[SCANNING]", url)
-
-        html = fetch(url)
-
-        if not html:
-            continue
-
-        channels.update(
-            extract_links(html, url)
-        )
-
-        soup = BeautifulSoup(html, "html.parser")
-
-        for tag in soup.find_all("a", href=True):
-
-            link = urljoin(url, tag["href"])
-
-            parsed = urlparse(link)
-
-            if (
-                parsed.scheme in ("http", "https")
-                and parsed.netloc == domain
-                and link not in visited
-                and link not in pending
-            ):
-
-                pending.append(link)
-
-    return channels
-
-
-def detect_category(name, url, categories):
-
-    text = (name + " " + url).lower()
-
-    for category, keywords in categories.items():
-
-        if category == "Others":
-            continue
-
-        for keyword in keywords:
-
-            if keyword.lower() in text:
-                return category
-
-    return "Others"
-
-
-def check_stream(url):
+        print("[SUCCESS] Nothing to update.")
+        return True
 
     try:
 
-        response = requests.get(
-            url,
-            headers=HEADERS,
-            timeout=15,
-            stream=True
+        OUTPUT_FILE.parent.mkdir(
+            parents=True,
+            exist_ok=True
         )
 
-        if response.status_code != 200:
+        playlist = build_playlist(streams)
 
-            response.close()
-
-            return False
-
-        content_type = response.headers.get(
-            "Content-Type",
-            ""
-        ).lower()
-
-        data = next(
-            response.iter_content(2048),
-            b""
+        temporary_file = OUTPUT_FILE.with_suffix(
+            OUTPUT_FILE.suffix + ".tmp"
         )
 
-        response.close()
-
-        return (
-            b"#EXTM3U" in data
-            or "mpegurl" in content_type
+        temporary_file.write_text(
+            playlist,
+            encoding="utf-8"
         )
 
-    except requests.RequestException:
+        # Atomic replacement
+        temporary_file.replace(OUTPUT_FILE)
+
+        print(f"[FOUND] {len(streams)}")
+
+        print(f"[SAVED] {OUTPUT_FILE}")
+
+        print("[SUCCESS] Playlist updated.")
+
+        return True
+
+    except OSError as error:
+
+        print(f"[ERROR] File update failed: {error}")
 
         return False
 
 
-def create_playlist(channels, config):
-
-    groups = defaultdict(list)
-
-    categories = config["categories"]
-
-    for url, name in channels.items():
-
-        category = detect_category(
-            name,
-            url,
-            categories
-        )
-
-        groups[category].append(
-            (name, url)
-        )
-
-    lines = ["#EXTM3U"]
-
-    for category in categories:
-
-        items = groups.get(category, [])
-
-        for name, url in sorted(items):
-
-            name = name.replace('"', "'")
-
-            lines.append(
-                f'#EXTINF:-1 group-title="{category}",{name}'
-            )
-
-            lines.append(url)
-
-    output_file = BASE_DIR / config["output"]
-
-    output_file.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    with open(
-        output_file,
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        f.write(
-            "\n".join(lines) + "\n"
-        )
-
-    print("[SUCCESS] Playlist created:", output_file)
-
-    print("[TOTAL CHANNELS]", len(channels))
-
+# ==========================================
+# MAIN
+# ==========================================
 
 def main():
 
-    config = load_config()
+    print("=" * 45)
+    print("ASH TV M3U8 PLAYLIST GENERATOR")
+    print("=" * 45)
 
-    all_channels = {}
+    html = fetch_website()
 
-    for website in config["source_urls"]:
+    if html is None:
 
-        print("\n[WEBSITE]", website)
+        print("[WARNING] Website unavailable.")
+        print("[KEEP] Existing playlist preserved.")
 
-        channels = scan_website(
-            website,
-            config["max_pages"]
-        )
+        # Do not fail GitHub Actions
+        return 0
 
-        all_channels.update(channels)
+    streams = extract_public_streams(html)
 
-    print("\n[FOUND]", len(all_channels))
+    print(f"[FOUND] {len(streams)}")
 
-    if not all_channels:
+    result = save_playlist(streams)
 
-        raise RuntimeError(
-            "No publicly exposed M3U8 links found."
-        )
+    if not result:
 
-    urls = list(all_channels.keys())
+        print("[WARNING] Playlist update unsuccessful.")
 
-    with ThreadPoolExecutor(
-        max_workers=config["max_workers"]
-    ) as executor:
+        return 0
 
-        results = list(
-            executor.map(check_stream, urls)
-        )
+    print("=" * 45)
+    print("PROCESS COMPLETED")
+    print("=" * 45)
 
-    working = {}
-
-    for url, status in zip(urls, results):
-
-        if status:
-
-            working[url] = all_channels[url]
-
-            print("[WORKING]", all_channels[url])
-
-        else:
-
-            print("[INVALID]", all_channels[url])
-
-    if not working:
-
-        raise RuntimeError(
-            "No working M3U8 streams found."
-        )
-
-    create_playlist(
-        working,
-        config
-    )
+    return 0
 
 
 if __name__ == "__main__":
 
-    main()
+    sys.exit(main())
