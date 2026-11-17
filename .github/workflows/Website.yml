@@ -1,27 +1,22 @@
-name: BD X WEBSIE Playlist
+name: ASH TV Playlist Update
 
 on:
+
   workflow_dispatch:
 
   schedule:
     - cron: "*/30 * * * *"
 
-  push:
-    branches:
-      - main
-
 permissions:
   contents: write
 
-concurrency:
-  group: playlist-update
-  cancel-in-progress: false
-
 jobs:
 
-  generate:
+  update:
 
     runs-on: ubuntu-latest
+
+    timeout-minutes: 5
 
     steps:
 
@@ -38,42 +33,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Generator
+      - name: Run Playlist Generator
         run: |
           python main.py
 
-      - name: Verify Playlist
-        run: |
-          if [ ! -s playlist.m3u ]; then
-            echo "ERROR: playlist.m3u missing or empty"
-            exit 1
-          fi
-
-          if ! head -n 1 playlist.m3u | grep -q "#EXTM3U"; then
-            echo "ERROR: Invalid M3U playlist"
-            exit 1
-          fi
-
-          echo "Playlist generated successfully"
-          ls -lh playlist.m3u
-
-      - name: Commit Changes
+      - name: Commit Playlist
         run: |
 
           git config user.name "github-actions[bot]"
 
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add playlist.m3u
+          git add public/ash-tv.m3u
 
           if git diff --cached --quiet; then
-
-            echo "No changes found"
-
+            echo "No playlist changes."
           else
-
-            git commit -m "Auto update playlist"
-
+            git commit -m "Update ASH TV playlist"
             git push
-
           fi
