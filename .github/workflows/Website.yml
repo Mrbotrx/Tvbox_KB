@@ -10,13 +10,13 @@ permissions:
 contents: write
 
 concurrency:
-group: website-update
+group: website-auto-update
 cancel-in-progress: false
 
 jobs:
 update:
+name: Update Website Playlist
 runs-on: ubuntu-latest
-
 timeout-minutes: 10
 
 steps:
@@ -24,49 +24,40 @@ steps:
     uses: actions/checkout@v4
     with:
       fetch-depth: 0
-      persist-credentials: true
 
   - name: Setup Python
     uses: actions/setup-python@v5
     with:
       python-version: "3.12"
-      cache: "pip"
-      cache-dependency-path: requirements.txt
 
   - name: Install Dependencies
     run: |
       python -m pip install --upgrade pip
       pip install -r requirements.txt
 
-  - name: Prepare Playlist Directory
+  - name: Prepare Directory
     run: |
       mkdir -p public
 
   - name: Run Website Scanner
-    id: scanner
     run: |
       python -u main.py
 
   - name: Validate Playlist
     id: validate
     run: |
-      if [ -f public/ash-tv.m3u ] && [ -s public/ash-tv.m3u ]; then
-        if head -n 1 public/ash-tv.m3u | grep -q "#EXTM3U"; then
-          echo "valid=true" >> "$GITHUB_OUTPUT"
-          echo "Valid playlist found."
-        else
-          echo "valid=false" >> "$GITHUB_OUTPUT"
-          echo "Invalid playlist header."
-        fi
+      if [ -s public/ash-tv.m3u ] && \
+         head -n 1 public/ash-tv.m3u | grep -q '^#EXTM3U'; then
+        echo "valid=true" >> "$GITHUB_OUTPUT"
+        echo "Valid playlist found."
       else
         echo "valid=false" >> "$GITHUB_OUTPUT"
-        echo "Playlist does not exist or is empty."
+        echo "No valid playlist found."
+        echo "Previous playlist will not be committed or deleted."
       fi
 
-  - name: Commit and Push
+  - name: Commit Playlist
     if: steps.validate.outputs.valid == 'true'
-    env:
-      GH_TOKEN: ${{ github.token }}
     run: |
       git config user.name "github-actions[bot]"
       git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -74,21 +65,14 @@ steps:
       git add -f public/ash-tv.m3u
 
       if git diff --cached --quiet; then
-        echo "No changes to commit."
+        echo "No changes detected."
       else
-        git commit -m "Automated website playlist update"
-
+        git commit -m "Automated playlist update"
         git push origin "HEAD:${GITHUB_REF_NAME}"
       fi
 
-  - name: Workflow Report
+  - name: Final Report
     if: always()
     run: |
-      echo "## Website Update Report" >> "$GITHUB_STEP_SUMMARY"
-      echo "Scanner completed." >> "$GITHUB_STEP_SUMMARY"
-
-      if [ -f public/ash-tv.m3u ]; then
-        echo "Playlist file exists." >> "$GITHUB_STEP_SUMMARY"
-      else
-        echo "Playlist unavailable. Existing repository file was not deleted." >> "$GITHUB_STEP_SUMMARY"
-      fi
+      echo "## Website Auto Update" >> "$GITHUB_STEP_SUMMARY"
+      echo "Workflow execution finished." >> "$GITHUB_STEP_SUMMARY"
