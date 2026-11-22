@@ -1,7 +1,7 @@
 #EXTM3U
 # KB TV PRO ADVANCED ENGINE V3
 # REGION: BD + INDIA
-# TOTAL: 302 CHANNELS
+# TOTAL: 305 CHANNELS
 
 #EXTINF:-1 tvg-id="24Horas.es@SD" tvg-logo="https://i.ibb.co/21sXZ3GT/24h.png" group-title="News;Public",24 Horas (720p)
 https://rtvelivestream.rtve.es/rtvesec/24h/24h_main_dvr.m3u8
@@ -95,6 +95,8 @@ https://d3e05csss9c272.cloudfront.net/out/v1/f0bf71c57581470fb9379f603e8f5d83/CG
 https://amg00405-rakutentv-cgtndocumentary-rakuten-0ql8j.amagi.tv/master.m3u8
 #EXTINF:-1 tvg-id="ChampionTV.ci@SD" tvg-logo="https://i.imgur.com/WjHSrHN.png" group-title="Business",Champion TV
 https://stream.berosat.live/hls/champion-tv/champion-tv.m3u8
+#EXTINF:-1 tvg-id="ClaroVisionTV.do@SD" tvg-logo="https://i.imgur.com/MpTgJMJ.png" group-title="Entertainment",Claro Vision TV (720p)
+https://streamunoapp.com:3057/live/clarovisiontvlive.m3u8
 #EXTINF:-1 tvg-id="ConcepcionTV.cl@SD" tvg-logo="https://i.imgur.com/9k0yAxj.jpeg" group-title="General",Concepcion TV (720p)
 https://stream.blserver.cl/hls/ctv/index.m3u8
 #EXTINF:-1 tvg-id="CRTelevision.pe@SD" tvg-logo="https://i.imgur.com/oxycMeA.png" group-title="General",CR Television (720p) [Not 24/7]
@@ -151,8 +153,6 @@ https://jmp2.uk/rok-b484db42f3d31b6dc2f604d453c694a0.m3u8
 http://163.61.226.31:9981/stream/channelid/448803688?profile=pass
 #EXTINF:-1 tvg-id="FashionTVParisLOriginal.fr@SD" tvg-logo="https://i.imgur.com/GFTAN5Q.png" group-title="Lifestyle",FashionTV Paris L'Original (1080p)
 https://edge-fast3.evrideo.tv/bfdbb576-83f7-11f0-9f89-0200170e3e04_1000028043_HLS/manifest.m3u8
-#EXTINF:-1 tvg-id="FGTV.us@SD" tvg-logo="https://i.imgur.com/RXFmzVY.png" group-title="Legislative",FGTV (United States)
-https://securestream11.champds.com/LIVE/FultonCoGALIVE/FultonCoGALIVE.m3u8
 #EXTINF:-1 tvg-id="FolkKlubTV.au@SD" tvg-logo="https://i.imgur.com/Seq7Od7.png" group-title="Music",Folk Klub TV (720p)
 http://tv1.intv.mk:1935/live2/folkklub/index.m3u8
 #EXTINF:-1 tvg-id="FriendsTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Friends_TV.png" group-title="Entertainment",Friends TV (1080p)
@@ -161,6 +161,8 @@ https://server.playontv.in/friendstv/index.m3u8
 https://edge20.vedge.infomaniak.com/livecast/ik:fusiontv/manifest.m3u8
 #EXTINF:-1 tvg-id="GangaurTV.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Gangaur.png" group-title="Entertainment",Gangaur TV (1080p)
 https://pbgangaur.wiseplayout.com/Gangaur/master.m3u8
+#EXTINF:-1 tvg-id="GlendaleTV.us@SD" tvg-logo="https://i.imgur.com/akbtQ33.png" group-title="Legislative",Glendale TV (720p) [Geo-blocked]
+https://reflect-gtv6-glendale.cablecast.tv/live-2/live/live.m3u8
 #EXTINF:-1 tvg-id="GNNTV.jm@SD" tvg-logo="https://i.imgur.com/itetPKw.png" group-title="Religious",GNN TV (1080p)
 https://na.linear.zype.com/bf94f9f4-383c-40e0-9d49-279a4f33ab8d/f29b8836-d990-4c8d-b421-192a8f43edc4-zype/live.m3u8
 #EXTINF:-1 tvg-id="GuangdongTVAmerica.us@SD" tvg-logo="https://i.imgur.com/7J4qGjA.png" group-title="General",Guangdong TV America
@@ -219,6 +221,8 @@ https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8
 https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8
 #EXTINF:-1 tvg-id="KantipurTV.np@HD" tvg-logo="https://i.imgur.com/HEVo2Gc.png" group-title="General",Kantipur TV
 https://ktvhdsg.ekantipur.com:8443/high_quality_85840165/hd/kantipurtv/hd_1080/chunks.m3u8
+#EXTINF:-1 tvg-id="KFONTV.us@SD" tvg-logo="https://i.imgur.com/MQHYm3V.png" group-title="General",KFON TV (720p) [Geo-blocked]
+https://reflect-watchkfon-fontana.cablecast.tv/live-3/live/live.m3u8
 #EXTINF:-1 tvg-id="KoraTV.pe@SD" tvg-logo="https://i.imgur.com/ahBYv4x.png" group-title="Entertainment",Kora TV
 https://s3.tvdatta.com:3700/live/jjrtvlive.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru@SD" tvg-logo="https://smotret.tv/images/kulinar-tv.webp" group-title="Cooking",Kulinar TV (576p)
@@ -523,6 +527,8 @@ https://server.playontv.in/swastiktv/index.m3u8
 https://mumt04.tangotv.in/m18aqlK4TAMILANTELEVISION/index.m3u8
 #EXTINF:-1 tvg-id="TDNMedios.do@SD" tvg-logo="https://i.imgur.com/C8dSJM7.png" group-title="Undefined",TDN Medios (720p) [Not 24/7]
 https://castv10.plugstreaming.com:19360/tdntv/tdntv.m3u8
+#EXTINF:-1 tvg-id="Teledeporte.es@SD" tvg-logo="https://i.ibb.co/0jxLdjnY/TDP.png" group-title="Sports",Teledeporte (720p) [Geo-blocked]
+https://rtvelivestream.rtve.es/rtvesec/tdp/tdp_main.m3u8
 #EXTINF:-1 tvg-id="Teletur.do@SD" tvg-logo="https://i.imgur.com/Ig4gR93.png" group-title="Travel",Teletur (720p) [Not 24/7]
 https://fox.hostlagarto.com:8081/teleturtv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="TezaurTV.md@SD" tvg-logo="https://i.imgur.com/eAagwLW.png" group-title="Music",Tezaur TV (576i)
@@ -545,6 +551,8 @@ https://fs.uplink.kz/turan_tv/mono.m3u8?token=onlinetv
 https://server.livelegitpro.in/bnews24/bnews24/video.m3u8
 #EXTINF:-1 tvg-id="TVEInternacionalAmerica.es@HD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="Undefined",TVE Internacional America HD (1080p) [Geo-blocked]
 https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_ame_main_1080.m3u8
+#EXTINF:-1 tvg-id="TVEInternacionalAsiaOceania.es@SD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="Undefined",TVE Internacional Asia-Oceania (576p) [Geo-blocked]
+https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_asia_main_576.m3u8
 #EXTINF:-1 tvg-id="TVEInternacionalAsiaOceania.es@HD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="Undefined",TVE Internacional Asia-Oceania HD (1080p) [Geo-blocked]
 https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_asia_main_1080.m3u8
 #EXTINF:-1 tvg-id="TVEInternacionalEurope.es@HD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="Undefined",TVE Internacional Europe HD (1080p) [Geo-blocked]
@@ -571,8 +579,6 @@ http://vg-zeefta.akamaized.net/ptnr-yupptv/title-wion/v1/master/611d79b11b77e2f5
 https://wgtvdt3.lls.pbs.org/wgtvdt3-cmaf-hls.m3u8
 #EXTINF:-1 tvg-id="WWONTVChannel48.us@SD" tvg-logo="https://i.imgur.com/l4qHAq6.png" group-title="Entertainment",WWON-TV Channel 48
 https://tv2.fastcast4u.com:3943/stream/play.m3u8
-#EXTINF:-1 tvg-id="XezerTV.az@SD" tvg-logo="" group-title="General",Xezer TV
-https://xezer.tvstream.az/hls/stream/main_stream.m3u8
 #EXTINF:-1 tvg-id="XinjiangTV2.cn@SD" tvg-logo="https://i.imgur.com/GXFLqxx.png" group-title="Undefined",Xinjiang TV 2
 http://110.153.180.106:55555/out_3/index.m3u8
 #EXTINF:-1 tvg-id="XinjiangTV3.cn@SD" tvg-logo="https://i.imgur.com/l8S5qQB.png" group-title="Undefined",Xinjiang TV 3
