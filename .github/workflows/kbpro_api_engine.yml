@@ -1,0 +1,69 @@
+name: KBPRO API Playlist Engine
+
+on:
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 */3 * * *"
+
+  push:
+    paths:
+      - "kbpro_api_engine.py"
+      - "requirements.txt"
+      - ".github/workflows/kbpro_api_engine.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kbpro-api-engine
+  cancel-in-progress: true
+
+jobs:
+
+  generate-playlist:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Requirements
+        run: |
+          pip install -r requirements.txt
+
+      - name: Generate Playlist and Locked ZIP
+        env:
+          PLAYLIST_ZIP_PASSWORD: ${{ secrets.PLAYLIST_ZIP_PASSWORD }}
+        run: |
+          python kbpro_api_engine.py
+
+      - name: Commit Updated Files
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add KBPRO_API_CHANNELS.m3u
+          git add KBPRO_API_CHANNELS_LOCKED.zip
+
+          if git diff --cached --quiet; then
+
+            echo "No changes detected."
+
+          else
+
+            git commit -m "Update API Playlist and Locked ZIP"
+
+            git push
+
+          fi
