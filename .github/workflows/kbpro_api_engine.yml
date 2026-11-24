@@ -6,12 +6,6 @@ on:
   schedule:
     - cron: "0 */3 * * *"
 
-  push:
-    paths:
-      - "**.py"
-      - "requirements.txt"
-      - ".github/workflows/kbpro_api_engine.yml"
-
 permissions:
   contents: write
 
@@ -24,53 +18,124 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # 2. Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install Requirements
+      # 3. Install requirements
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          fi
+          pip install requests==2.32.5
+          pip install beautifulsoup4==4.14.2
+          pip install pyzipper==0.3.6
 
-      - name: Locate Python Script
+      # 4. Extract Main ZIP
+      - name: Extract Main ZIP
+        env:
+          ZIP_PASSWORD: ${{ secrets.PLAYLIST_ZIP_PASSWORD }}
+        run: |
+          python - <<'PY'
+          import os
+          import zipfile
+          import pyzipper
+          from pathlib import Path
+
+          source = Path("kbpro_api_engine.zip")
+          output = Path("kbpro_extracted")
+
+          if not source.exists():
+              raise SystemExit("ERROR: Main ZIP not found!")
+
+          password = os.environ.get("ZIP_PASSWORD", "")
+
+          if not password:
+              raise SystemExit("ERROR: ZIP password secret missing!")
+
+          output.mkdir(exist_ok=True)
+
+          try:
+              with pyzipper.AESZipFile(source, "r") as z:
+                  z.setpassword(password.encode())
+                  z.extractall(output)
+
+          except Exception as aes_error:
+              print("AES extraction failed, trying standard ZIP...")
+              try:
+                  with zipfile.ZipFile(source, "r") as z:
+                      z.extractall(
+                          output,
+                          pwd=password.encode()
+                      )
+              except Exception as error:
+                  raise SystemExit(
+                      f"ZIP extraction failed: {error}"
+                  )
+
+          print("ZIP extracted successfully!")
+
+          for file in output.rglob("*"):
+              if file.is_file():
+                  print(file)
+          PY
+
+      # 5. Find Python Script
+      - name: Locate Main Python Script
         id: locate
         run: |
           echo "Searching Python files..."
 
-          find . -type f -name "kbpro_api_engine.py"
-
-          SCRIPT=$(find . -type f -name "kbpro_api_engine.py" | head -n 1)
+          SCRIPT=$(find kbpro_extracted \
+            -type f \
+            -name "kbpro_api_engine.py" \
+            | head -n 1)
 
           if [ -z "$SCRIPT" ]; then
-            echo "ERROR: kbpro_api_engine.py not found!"
+            SCRIPT=$(find kbpro_extracted \
+              -type f \
+              -name "*.py" \
+              | head -n 1)
+          fi
+
+          if [ -z "$SCRIPT" ]; then
+            echo "ERROR: No Python script found inside ZIP!"
             exit 1
           fi
 
           echo "SCRIPT=$SCRIPT" >> "$GITHUB_OUTPUT"
 
-          echo "Found: $SCRIPT"
+          echo "Python Script Found: $SCRIPT"
 
+      # 6. Run Main Script
       - name: Generate Playlist and Locked ZIP
         env:
           PLAYLIST_ZIP_PASSWORD: ${{ secrets.PLAYLIST_ZIP_PASSWORD }}
         run: |
           python "${{ steps.locate.outputs.SCRIPT }}"
 
+      # 7. Verify Files
       - name: Verify Generated Files
         run: |
-          test -s KBPRO_API_CHANNELS.m3u
-          test -s KBPRO_API_CHANNELS_LOCKED.zip
+          if [ ! -s KBPRO_API_CHANNELS.m3u ]; then
+            echo "Playlist missing!"
+            exit 1
+          fi
 
-          echo "Playlist and ZIP generated successfully."
+          if [ ! -s KBPRO_API_CHANNELS_LOCKED.zip ]; then
+            echo "Locked ZIP missing!"
+            exit 1
+          fi
 
-      - name: Commit Updated Files
+          echo "All files generated successfully!"
+
+      # 8. Push to GitHub
+      - name: Commit and Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -81,6 +146,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes detected."
           else
-            git commit -m "Update KBPRO API Playlist and ZIP"
+            git commit -m "Update KBPRO API Playlist"
             git push
           fi
